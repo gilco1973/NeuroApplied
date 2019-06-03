@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MatSnackBarModule } from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from 'angularx-social-login';
+import { RequestInterceptor } from './request-interceptor.service';
 
 
 const config = new AuthServiceConfig([
@@ -45,8 +46,14 @@ export function provideConfig() {
     MatSnackBarModule,
     NgxSpinnerModule,
     SocialLoginModule,
+    HttpClientModule,
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true,
+    },
     {
       provide: AuthServiceConfig,
       useFactory: provideConfig

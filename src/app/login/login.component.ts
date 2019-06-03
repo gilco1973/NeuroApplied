@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { User } from '../User';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 declare var gapi: any;
 
 @Component({
@@ -9,18 +11,25 @@ declare var gapi: any;
 })
 
 export class LoginComponent implements OnInit, AfterViewInit {
-
-  constructor() {
+  hostUrl = 'http://localhost:4200';
+  constructor(private activeRoute: ActivatedRoute, private http: HttpClient) {
 
   }
 
   ngOnInit() {
-
+    this.activeRoute.queryParams.subscribe(params => {
+      const code = <string>params['code'];
+      if (code && code.length) {
+        this.http.post('/candidate/login/linkedin', { code: code }).toPromise().then((res: any) => {
+        },
+          function error(res) {
+            console.log(res);
+          });
+      }
+    });
   }
   ngAfterViewInit() {
-
-    this.signInWithGoogle();
-
+    // this.signInWithGoogle();
   }
 
 

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.activeRoute.queryParams.subscribe(params => {
       const code = <string>params['code'];
       if (code && code.length) {
-        this.http.post('/login/linkedin', { code: code }).toPromise().then((res: any) => {
+        this.http.get('/login/linkedin?code=' + code ).toPromise().then((res: any) => {
         },
           function error(res) {
             console.log(res);

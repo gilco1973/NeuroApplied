@@ -75,6 +75,4 @@ app.use(function(err, req, res, next) {
   res.sendFile(angularClientIndexHtml);
 });
 
-app.listen(3000);
-
 module.exports = app;

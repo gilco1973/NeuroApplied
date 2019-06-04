@@ -15,40 +15,12 @@ var validate = require('express-validation');
 //var integrate = require('../../logics/integrations/integrate_main').checkIntegrationsExistsAndExecute;
 var request = require('request');
 
-/**
- * @api {post} /candidate/signup RegisterNewCandidate
- * @apiVersion 0.0.1
- * @apiPermission No permission required
- * @apiGroup Candidate General
- * @apiName RegisterNewCandidate
- * @apiDescription Registers a new candidate to Qualimatch.
- *
- * @apiParam {String} email Candidate's email.
- * @apiParam {String{6..20}} password Candidate's password.
- * @apiParam {String} firstName Candidate's first name.
- * @apiParam {String} lastName Candidate's last name.
- * @apiParam {String} [linkedIn] Candidate's LinkedIn link.
- * @apiParam {String} phoneNumber Candidate's phone number.
- *
- *
- * @apiError (Error 5xx) {Object} 500 Server error
- * @apiErrorExample {json} Error-Response:
- *     HTTP/1.1 500 Not Found
- *     {
- *       "Could not create a new user."
- *     }
- *
- * @apiSuccessExample {json} Success-Response:
- *     HTTP/1.1 301 Moved Permanently
- *     Location: /candidate/setup
- */
-
 function loginLinkedIn(req, res, next) {
 
     var data = {
         grant_type: 'authorization_code',
-        code: req.body.code,
-        redirect_uri: req.headers.origin + '/login',
+        code: req.query.code,
+        redirect_uri: req.protocol+'://'+req.headers.host + '/login',
         client_id: '776im3xq8cf4md',
         client_secret: 'yeNop7boR8ib0MrX'
     }
@@ -118,6 +90,6 @@ function signupOrSignin(obj, req, res, callback) {
 }
 
 
-router.post('/', loginLinkedIn);
+router.get('/', loginLinkedIn);
 
 module.exports = router;

@@ -8,7 +8,7 @@ process.env.AZURE_STORAGE_ACCOUNT = process.env.AZURE_STORAGE_CONNECTION_STRING 
 
 var config = {
     development: {
-        mainHostUrl: 'https://localhost:3000',
+        mainHostUrl: 'http://localhost:3000',
         root: rootPath,
         port: process.env.PORT || 3000,
         db: process.env.db_production_connectionString || 'mongodb://127.0.0.1:27017/local',

@@ -12,15 +12,17 @@
   top: 20rem;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-34%, -50%);
+  transform: translate(-50%, -50%);
   position: absolute;
   flex-wrap: wrap;
+  width: 14.3rem;
 }
 
 .text-box {
   top: 8.2rem;
   font-size: 2.4rem;
   left: 50%;
+  width: 14.3rem;
   transform: translate(-50%, -50%);
   position: absolute;
 }
@@ -39,21 +41,34 @@
 
 /* Social Buttons Style */
 a {
-  background-position: 1em;
+  background-position: 0.5em;
   background-repeat: no-repeat;
-  background-size: 2em;
+  background-size: 1.8em;
   border-radius: 0.8rem;
   color: white;
   cursor: pointer;
   height: 5rem;
-  padding: 1.5rem 0em 0 2em;
+  padding: 0rem 0em 0 1.5em;
   text-decoration: none;
   transition: all 0.5s;
   text-align: center;
   font-size: 1.6rem;
-  flex-basis: 25.3rem;
   margin: 1rem;
   margin-right: 0.7rem;
+  line-height: 5rem;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
 }
 
 .btn-google {

@@ -13,6 +13,7 @@ import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from 'angularx-social-login';
 import { RequestInterceptor } from './request-interceptor.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 const config = new AuthServiceConfig([
   {
@@ -47,7 +48,8 @@ export function provideConfig() {
     NgxSpinnerModule,
     SocialLoginModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [
     {

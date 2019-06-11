@@ -31,4 +31,17 @@
       </div>
     </div>
   </div>
+<div class="separator-text">or create a free acount</div>
+<div>
+  <input type="text" [(ngModel)]="email" placeholder="Email"/>
+</div>
+<div>
+  <input type="password" [(ngModel)]="password" placeholder="Password"/>
+</div>
+<div>
+  <a id="password-login-button" class="btn-login"
+    (click)="loginWithPassword()">
+    Login
+  </a>
+</div>
 </div>

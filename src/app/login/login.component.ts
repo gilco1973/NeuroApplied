@@ -15,6 +15,8 @@ declare var gapi: any;
 export class LoginComponent implements OnInit, AfterViewInit {
   hostUrl = 'http://localhost:4200';
   code: string;
+  password: any;
+  email: any;
   constructor(private activeRoute: ActivatedRoute, private svcApi: ApiService, private http: HttpClient) {
 
   }
@@ -42,7 +44,17 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {
   }
+  loginWithPassword(){
+    this.svcApi.loginWithPassword(this.email, this.password).then((res: any) => {
+      this.http.get(res.url).toPromise().then((result: any) => {
+        console.log(result);
+      });
+    },
+      function error(res) {
+        console.log(res);
+      });
 
+  }
 
 
   // signInWithGoogle() {

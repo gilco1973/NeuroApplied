@@ -8,8 +8,7 @@ import { SocialLogin } from './common/social-login.enum';
 export class ApiService {
   server_url = '/technician/';
   constructor(private http: HttpClient) { }
-
-  login(email: string, password: string): Promise<any> {
+  loginWithPassword(email: any, password: any) {
     const data = { email: email, password: password };
     return this.http.post(this.server_url + 'login', data).toPromise();
   }

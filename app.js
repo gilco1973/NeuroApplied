@@ -34,7 +34,7 @@ mongoose.connect(config.db, {
     useNewUrlParser: true
 });
 console.info('Connected to: ' + config.db);
-routes(app, passport);
+
 // view engine setup
 app.use(logger('dev'));
 app.use(express.json());
@@ -43,9 +43,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
-//app.use(bodyParser());
+app.use(bodyParser.json( { type: "*/*" }));
 app.set('view engine', 'ejs');
-
+routes(app, passport);
 app.use(session({
   secret: 'NeuroApplied hashing',
   store: new MongoStore({
@@ -54,11 +54,13 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-
-app.use(bodyParser.json());
+app.use(bodyParser.json({
+  limit: '50mb'
+}));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -75,5 +77,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.sendFile(angularClientIndexHtml);
 });
+
+
 
 module.exports = app;

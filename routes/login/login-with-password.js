@@ -3,8 +3,8 @@ var router = express.Router();
 var loginUser = require('./login-user');
 
 function loginWithPassword(req, res, next) {
-  let email = req.query.email;
-  const password = req.query.password;
+  let email = req.body.email;
+  const password = req.body.password;
   email = email.toLowerCase();
   
   loginUser(email, password, true, ((err, result) => {
@@ -19,6 +19,6 @@ function loginWithPassword(req, res, next) {
   }));
 }
 
-router.get('/', loginWithPassword);
+router.post('/', loginWithPassword);
 
 module.exports = router;

@@ -218,6 +218,7 @@ input {
   border-radius: 8px;
   border: solid 1px #979797;
   padding-left: .5rem;
+  margin-bottom: 1rem;
 }
 .btn-login {
   background-color: #3b5998;
@@ -231,4 +232,7 @@ input {
 }
 .btn-login:active {
   background-color: #2d4373;
+}
+.email-password-holder{
+  margin-top: 1.8rem;
 }

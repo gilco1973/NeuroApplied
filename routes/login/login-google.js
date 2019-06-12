@@ -5,17 +5,10 @@
 
 var express = require('express');
 var router = express.Router();
+var loginUser = require('./login-user');
 const {
   google
 } = require('googleapis');
-//var UserType = require('../../logics/common/UserType.js');
-//var Candidates = require('../../models/Candidates');
-//var signupCandidate = require('../../logics/candidates/signup-candidate').signupCandidate;
-//var signupCandidateFromLinkedIn  = require('../../logics/candidates/signup-candidate').signupCandidateFromLinkedIn;
-var validate = require('express-validation');
-//var signupValidationSchema = require('../validators/user-data-validator').signupSchema;
-//var reportError = require('../../errors').reportError;
-//var integrate = require('../../logics/integrations/integrate_main').checkIntegrationsExistsAndExecute;
 var request = require('request');
 const clientId = "504131472976-h165f9mk368n2j5ghccn572kok4oh5t3.apps.googleusercontent.com";
 const clientSecret = "BDJJenZ_mdljva0_nQL0dnPr";
@@ -99,13 +92,20 @@ function getCandidateDetails(obj, req, res) {
       userObj.firstName = parseString.given_name;
       userObj.lastName = parseString.family_name;
       userObj.accessToken = obj.access_token;
-      userObj.imageUrl = parseString.picture;
+      userObj.imgUrl = parseString.picture;
 
       userObj.email = parseString.email;
-      signupOrSignin(userObj, req, res, function (err, response) {
-
-        console.log(userObj);
-      });
+      userObj.password = userObj.password || '';
+      loginUser(userObj.email, userObj.password, false, ((err, result) => {
+        if (err) {
+          return res.status(500).send({
+            message: err.message
+          })
+        }
+        return res.status(200).send({
+          result: result
+        });
+      }));
     }
   })
 }

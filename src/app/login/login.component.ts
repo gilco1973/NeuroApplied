@@ -33,27 +33,15 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
   loginWithSocial(social: string) {
     this.svcApi.loginWithSocial(social, this.code).then((res: any) => {
-      this.http.get(res.url).toPromise().then((result: any) => {
-        console.log(result);
-      });
-    },
-      function error(res) {
         console.log(res);
       });
-
   }
   ngAfterViewInit() {
   }
-  loginWithPassword(){
+  loginWithPassword() {
     this.svcApi.loginWithPassword(this.email, this.password).then((res: any) => {
-      this.http.get(res.url).toPromise().then((result: any) => {
-        console.log(result);
-      });
-    },
-      function error(res) {
-        console.log(res);
-      });
-
+      console.log(res);
+    });
   }
 
 

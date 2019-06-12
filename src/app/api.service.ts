@@ -9,8 +9,8 @@ export class ApiService {
   server_url = '/technician/';
   constructor(private http: HttpClient) { }
   loginWithPassword(email: any, password: any) {
-    const data = { email: email, password: password };
-    return this.http.post(this.server_url + 'login', data).toPromise();
+    //const data = { email: email, password: password };
+    return this.http.get(this.server_url + `login?email=${email}&password=${password}`).toPromise();
   }
   logout(email: string, password: string): Promise<any> {
     const data = {};

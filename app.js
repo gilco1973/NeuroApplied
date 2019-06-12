@@ -18,6 +18,7 @@ var env = require('./app.config').currentEnv;
 var appName = 'NeuroApplied';
 // var config = require('./server/config').currentEnvConfig;
 var MongoStore = require('connect-mongo')(session);
+require('./models/db');
 var routes = require('./routes');
 
 app.use(cors());

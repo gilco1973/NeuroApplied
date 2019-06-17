@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { GameCreatorComponent } from './game-creator/game-creator.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'admin/dashboard',
     component: DashboardComponent,
+  },
+  {
+    path: 'welcome',
+    component: WelcomeComponent,
   },
   {
     path: 'login',
@@ -27,12 +32,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
     path: '**',
-    redirectTo: 'login'
+    redirectTo: 'welcome'
   }
 ];
 

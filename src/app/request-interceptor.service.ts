@@ -32,7 +32,7 @@ export class RequestInterceptor implements HttpInterceptor {
       if (err instanceof HttpErrorResponse) {
         // do error handling here
 
-        this.snackbar.open(err.error.message, 'close');
+        this.snackbar.open(err.error.message || 'Server Error', 'close');
       }
       setTimeout(() => {
         this.snackbar.dismiss();

@@ -14,6 +14,7 @@ import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from
 import { RequestInterceptor } from './request-interceptor.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const config = new AuthServiceConfig([
   {
@@ -39,7 +40,8 @@ export function provideConfig() {
     DashboardComponent,
     GameCreatorComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

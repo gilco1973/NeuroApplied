@@ -1,0 +1,47 @@
+<!--Navbar-->
+<!-- <div style="height:80px;background:purple"></div> -->
+<nav class="navbar navbar-1 navbar-dark fixed-pos" >
+
+ 
+
+  <button class="navbar-toggler hamburger-menu" type="button" data-toggle="modal" data-target="#nav-modal"
+    aria-expanded="false" aria-label="Toggle navigation"></button>
+ <!-- Navbar brand -->
+ <img id="navbar_logo" class="logo" src="../../assets/logo.png">
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="sideBar">
+   
+  </div>
+</nav>
+<!--/.Navbar-->
+<!-- Modal -->
+<div class="modal menu-modal" id="nav-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" backdrop="none">
+  <div class="modal-dialog" role="document">
+    <div class="modal-nav-content">
+      <div class="modal-nav-body">
+         <!-- Collapsible content -->
+    <links>
+
+      <!-- Links -->
+      <ul id="navigation" class="link-container links-list">
+
+
+        <li style="margin-top: 19px;" id="waitingOffers" [ngClass]="isWaitingActive ? 'linkActive' : 'linkInactive'"><a [routerLink]="['/candidate/panel/waitingoffers']" (click)="linkClicked('waitingoffers')">
+            <span>משרות חדשות</span></a>
+        </li>
+       <!--  <li [ngClass]="isInProgressActive ? 'linkActive' : 'linkInactive'" ><a [routerLink]="['/candidate/panel/OffersInProgress']" (click)="linkClicked('offersinprogress')">
+            <span>משרות בתהליך</span></a></li> -->
+        <li [ngClass]="isSalaryActive ? 'linkActive' : 'linkInactive'"  id="salary"><a [ngClass]="isSalaryActive ? 'linkActive' : 'linkInactive'" [routerLink]="['/candidate/panel/salary']" (click)="linkClicked('salary')">
+            <span >ציפיות השכר שלי</span></a>
+        </li>
+        <li [ngClass]="isContactActive ? 'linkActive' : 'linkInactive'"  id="contactUs"><a [ngClass]="isContactActive ? 'linkActive' : 'linkInactive'" [routerLink]="['/candidate/panel/contactus']" (click)="linkClicked('contactus')">
+            <span >צור קשר</span></a>
+        </li>
+      </ul>
+      <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
+      </div>
+    </div>
+  </div>
+</div>

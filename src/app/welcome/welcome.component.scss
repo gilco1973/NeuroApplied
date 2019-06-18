@@ -5,7 +5,7 @@ h1 {
     line-height: 30px;
     font-size:24px;
     font-weight: normal;
-    margin-bottom: 7px;
+    margin-bottom: 20px;
 }
 
 img {
@@ -14,11 +14,13 @@ img {
 }
 
 .img-container{
-    margin-top: 8rem;
-    margin-left: 9rem;
+  width: 70px;
+  height: auto;
+  margin: auto;
+  margin-top: 8rem;
 }
 .unique {
-    width: 290px;
+    
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -29,16 +31,17 @@ img {
     color: #878787;
   }
   .single{
-    margin-top: 65px;
+    margin-top: 3.5rem;
   }
   .buttons-container{
       display:flex;
+      margin-top:3.5rem;
   }
   .btn{
     border: 1px solid lightgray;
     height: 50px;
     width: 100px;
-    line-height: 50px;
+    line-height: 30px;
     background: #878787;
     flex: 1;
     margin: 5px;

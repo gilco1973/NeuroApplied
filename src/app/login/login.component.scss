@@ -19,12 +19,13 @@
 }
 
 .text-box {
-  top: 8.2rem;
-  font-size: 2.4rem;
-  left: 50%;
-  width: 14.3rem;
-  transform: translate(-50%, -50%);
-  position: absolute;
+  top: 11.2rem;
+    font-size: 2.4rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 100%;
 }
 
 /* a {
@@ -221,12 +222,17 @@ input {
   margin-bottom: 1rem;
 }
 .btn-login {
-  background-color: #3b5998;
-  height:5rem;
-  float:right;
-  padding: 0;
-  width:8rem;
+  background-color: #f36c2a;
+    height: 5rem;
+    float: left;
+    padding: 0;
+    width: 8rem;
+    color: white !important;
+    margin-left: 50%;
+    width: 150px;
+    transform: translate(-50%, 0px);
 }
+
 .btn-login:hover {
   background-color: #4c70ba;
 }

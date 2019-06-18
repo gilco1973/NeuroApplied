@@ -15,6 +15,9 @@ import { RequestInterceptor } from './request-interceptor.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { MDBBootstrapModule, MDBModalRef } from 'angular-bootstrap-md';
+import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
+import { CreateGameIntroComponent } from './create-game-intro/create-game-intro.component';
 
 const config = new AuthServiceConfig([
   {
@@ -41,10 +44,13 @@ export function provideConfig() {
     GameCreatorComponent,
     LoginComponent,
     RegisterComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    TopNavBarComponent,
+    CreateGameIntroComponent
   ],
   imports: [
     BrowserModule,
+    MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     MatSnackBarModule,
     NgxSpinnerModule,
@@ -62,7 +68,8 @@ export function provideConfig() {
     {
       provide: AuthServiceConfig,
       useFactory: provideConfig
-    }
+    },
+    MDBModalRef
   ],
   bootstrap: [AppComponent]
 })

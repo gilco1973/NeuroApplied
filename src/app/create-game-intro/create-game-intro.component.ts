@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-game-intro.component.scss']
 })
 export class CreateGameIntroComponent implements OnInit {
-
+  user: { firstName: string };
   constructor() { }
 
   ngOnInit() {
+    this.user = {
+      firstName: 'Gil'
+    };
   }
+  createGame() {
 
+  }
 }

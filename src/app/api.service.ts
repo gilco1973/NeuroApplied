@@ -20,6 +20,6 @@ export class ApiService {
     return this.http.get(`/login/${type}?code=${data}`).toPromise();
   }
   getCurrentUser(): Promise<any> {
-    return this.http.get('/getCurrentUser').toPromise();
+    return this.http.get('/getCurrentUser', { withCredentials: true }).toPromise();
   }
 }

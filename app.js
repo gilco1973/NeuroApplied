@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors'); //<-- required installing 'cors' (npm i cors --save)
+var session = require('express-session');
 var angularClientIndexHtml = require('./app.config').angularClientIndexHtml;
 var app = express();
 var favicon = require('serve-favicon');
@@ -12,7 +13,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var scheduler = require('node-schedule');
-//var initPassport = require('./server/middlewares/passport-init');
+var initPassport = require('./middlewares/passport-init');
 var config = require('./app.config').currentEnvConfig;
 var env = require('./app.config').currentEnv;
 var appName = 'NeuroApplied';
@@ -41,8 +42,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(passport.initialize());
-app.use(passport.session());
+
+// Initialize Passport
+initPassport(passport);
 app.use(bodyParser.json( { type: "*/*" }));
 app.set('view engine', 'ejs');
 routes(app, passport);
@@ -51,16 +53,18 @@ app.use(session({
   store: new MongoStore({
       mongooseConnection: mongoose.connection
   }),
-  resave: false,
-  saveUninitialized: false
+  resave: true,
+  saveUninitialized: true
 }));
+
 app.use(bodyParser.json({
   limit: '50mb'
 }));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

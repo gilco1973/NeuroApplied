@@ -35,7 +35,7 @@ const routes: Routes = [
   {
     path: 'intro',
     component: CreateGameIntroComponent,
-    resolve: { currentUser: GetCurrentUserResolver}
+  //  resolve: { currentUser: GetCurrentUserResolver}
   },
   {
     path: '',

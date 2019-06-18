@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { GameCreatorComponent } from './game-creator/game-creator.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CreateGameIntroComponent } from './create-game-intro/create-game-intro.component';
+import { GetCurrentUserResolver } from './get-current-user.resolver';
 
 
 
@@ -29,6 +31,11 @@ const routes: Routes = [
   {
     path: 'admin/game/create',
     component: GameCreatorComponent,
+  },
+  {
+    path: 'intro',
+    component: CreateGameIntroComponent,
+    resolve: { currentUser: GetCurrentUserResolver}
   },
   {
     path: '',

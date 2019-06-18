@@ -19,4 +19,7 @@ export class ApiService {
   loginWithSocial(type: string, data: any): Promise<any> {
     return this.http.get(`/login/${type}?code=${data}`).toPromise();
   }
+  getCurrentUser(): Promise<any> {
+    return this.http.get('/getCurrentUser').toPromise();
+  }
 }

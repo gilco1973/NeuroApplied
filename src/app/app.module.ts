@@ -18,6 +18,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { MDBBootstrapModule, MDBModalRef } from 'angular-bootstrap-md';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { CreateGameIntroComponent } from './create-game-intro/create-game-intro.component';
+import { GetCurrentUserResolver } from './get-current-user.resolver';
 
 const config = new AuthServiceConfig([
   {
@@ -69,7 +70,8 @@ export function provideConfig() {
       provide: AuthServiceConfig,
       useFactory: provideConfig
     },
-    MDBModalRef
+    MDBModalRef,
+    GetCurrentUserResolver
   ],
   bootstrap: [AppComponent]
 })

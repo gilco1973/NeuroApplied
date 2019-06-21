@@ -1,10 +1,10 @@
 <div class="text-box">
   <h1 class="header">
-    <span class="header-primary">create a free</span>
-    <span class="header-primary">account</span>
+    <span *ngIf="isRegister" class="header-primary">Register to <br>NeuroApplied</span>
+    <span *ngIf="!isRegister" class="header-primary">Login to <br>NeuroApplied</span>
   </h1>
 </div>
-<div style="margin-top:14rem;">
+<div class="social-container">
   <div class='row'>
     <div class='column'>
       <a id="google-button" class="btn-google"
@@ -19,8 +19,7 @@
       </div>
     </div>
     <div class='column'>
-      <a id="linkedin-button" class="btn-microsoft"
-        (click)="loginWithSocial('Microsoft')">
+      <a id="linkedin-button" class="btn-microsoft" (click)="loginWithSocial('Microsoft')">
         Microsoft
       </a>
       <div class='column'>
@@ -31,17 +30,25 @@
       </div>
     </div>
   </div>
-<div class="separator-text">or create a free acount</div>
-<div class="email-password-holder">
-  <input type="text" [(ngModel)]="email" placeholder="Email"/>
-</div>
-<div>
-  <input type="password" [(ngModel)]="password" placeholder="Password"/>
-</div>
-<div>
-  <a id="password-login-button" class="btn-login"
-    (click)="loginWithPassword()">
-    Login
-  </a>
-</div>
+  <div class="separator-text">OR</div>
+  <div class="input-holder">
+    <div *ngIf="isRegister" class="email-password-holder">
+      <input type="text" [(ngModel)]="user" placeholder="USER" />
+    </div>
+    <div *ngIf="isRegister" >
+      <input type="text" [(ngModel)]="email" placeholder="EMAIL" />
+    </div>
+    <div *ngIf="!isRegister" class="email-password-holder">
+        <input type="text" [(ngModel)]="email" placeholder="EMAIL / USER" />
+    </div> 
+    <div>
+      <input type="password" [(ngModel)]="password" placeholder="PASSWORD" />
+    </div>
+    <div class="login-container">
+      <a id="password-login-button" class="btn-login" (click)="loginWithPassword()">
+        <span *ngIf="isRegister">Register</span>
+        <span *ngIf="!isRegister">Login</span>
+      </a>
+    </div>
+  </div>
 </div>

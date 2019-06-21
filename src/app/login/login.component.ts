@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { User } from '../User';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   code: string;
   password: any;
   email: any;
+  @Input() isRegister;
   constructor(private activeRoute: ActivatedRoute, private svcApi: ApiService, private http: HttpClient) {
 
   }

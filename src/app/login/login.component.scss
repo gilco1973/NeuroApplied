@@ -18,17 +18,9 @@
   width: 14.3rem;
 }
 .social-container{
-  margin-top:13rem;
+  margin-top:5.5rem;
 }
-.text-box {
-  top: 11.2rem;
-    font-size: 2.4rem;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    position: absolute;
-    width: 100%;
-}
+
 
 /* a {
   display: inline-block;
@@ -43,7 +35,7 @@
 } */
 
 /* Social Buttons Style */
-a {
+.btn-social {
   background-position: 0.5em;
   background-repeat: no-repeat;
   background-size: 1.8em;
@@ -69,18 +61,14 @@ a {
   margin:0;
 }
 .separator-text {
-  font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: normal;
     font-style: normal;
     font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
+    line-height: 1.71;
+    letter-spacing: -0.08px;
     text-align: center;
-    color: #878787;
-    margin: auto;
-    display: block;
-    text-transform: uppercase;
-    margin-top: 1rem;
+    color: #676767;
 }
 
 .column {
@@ -220,14 +208,14 @@ a {
   padding-left: 40px !important;
   font-size: 12px;
 }
-input {
+/* input {
   width: 100%;
   height: 5rem;
   border-radius: 8px;
   border: solid 1px #979797;
   padding-left: 1rem;
   margin-bottom: 1rem;
-}
+} */
 .btn-login {
   background-color: #f36c2a;
     height: 5rem;
@@ -249,13 +237,26 @@ input {
 .btn-login:active {
   background-color: #2d4373;
 }
+.main-header {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: #000000;
+}
 .email-password-holder{
   margin-top: 1.8rem;
 }
 div {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .input-holder{
   display: flex;
   flex-direction: column;
+}
+.txt-center{
+  text-align: center;
 }

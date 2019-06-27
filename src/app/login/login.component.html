@@ -1,54 +1,57 @@
 <div class="text-box">
-  <h1 class="header">
-    <span *ngIf="isRegister" class="header-primary">Register to <br>NeuroApplied</span>
-    <span *ngIf="!isRegister" class="header-primary">Login to <br>NeuroApplied</span>
-  </h1>
+    <div *ngIf="isRegister" class="main-header">Create a free account</div>
+    <div *ngIf="!isRegister" class="main-header">Login to NeuroApplied</div>
 </div>
 <div class="social-container">
+    <div class="input-holder">
+        <div *ngIf="isRegister" class="txt-small">User name</div>
+        <div *ngIf="isRegister">
+          <input class="input-box txt-small-place-holder" type="text" [(ngModel)]="user" placeholder="Create a user name" />
+        </div>
+        <div *ngIf="isRegister" class="txt-small">Email</div>
+        <div *ngIf="isRegister">
+          <input class="input-box txt-small-place-holder" type="text" [(ngModel)]="email" placeholder="Enter your email" />
+        </div>
+        <div *ngIf="!isRegister" class="txt-small">Email / User</div>
+        <div *ngIf="!isRegister">
+            <input class="input-box txt-small-place-holder" type="text" [(ngModel)]="email" placeholder="Enter your email / user" />
+        </div> 
+        <div class="txt-small">Password</div>
+        <div>
+            <input class="input-box txt-small-place-holder" type="text" [(ngModel)]="password" placeholder="Should include at least one digit" />
+        </div> 
+        <div class="login-container" style="margin:auto;margin-top:1rem">
+          <a id="password-login-button" class="btn btn-blue" (click)="loginWithPassword()">
+            <span class="Sign-Up-Free" *ngIf="isRegister">Sign Up Free</span>
+            <span class="Sign-Up-Free" *ngIf="!isRegister">Login</span>
+          </a>
+        </div>
+      </div>
+  <div class="separator-text">or continue with</div>
   <div class='row'>
-    <div class='column'>
-      <a id="google-button" class="btn-google"
-        href="https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email&response_type=code&client_id=504131472976-h165f9mk368n2j5ghccn572kok4oh5t3.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Flogin&state=google">
-        Google
-      </a>
       <div class='column'>
-        <a id="linkedin-button" class="btn-linkedin"
-          href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=776im3xq8cf4md&redirect_uri={{ hostUrl }}/login&state=linkedin&scope=r_liteprofile%20r_emailaddress%20w_member_social">
-          LinkedIn
+        <a id="google-button" class="btn-social btn-google"
+          href="https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https://www.googleapis.com/auth/userinfo.profile%20https://www.googleapis.com/auth/userinfo.email&response_type=code&client_id=504131472976-h165f9mk368n2j5ghccn572kok4oh5t3.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Flogin&state=google">
+          Google
         </a>
+        <div class='column'>
+          <a id="linkedin-button" class="btn-social btn-linkedin"
+            href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=776im3xq8cf4md&redirect_uri={{ hostUrl }}/login&state=linkedin&scope=r_liteprofile%20r_emailaddress%20w_member_social">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class='column'>
+        <a id="linkedin-button" class="btn-social btn-microsoft" (click)="loginWithSocial('Microsoft')">
+          Microsoft
+        </a>
+        <div class='column'>
+          <a id="linkedin-button" class="btn-social btn-facebook"
+            href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=776im3xq8cf4md&redirect_uri={{ hostUrl }}/login&state=fooobar&scope=r_liteprofile%20r_emailaddress%20w_member_social">
+            Facebook
+          </a>
+        </div>
       </div>
     </div>
-    <div class='column'>
-      <a id="linkedin-button" class="btn-microsoft" (click)="loginWithSocial('Microsoft')">
-        Microsoft
-      </a>
-      <div class='column'>
-        <a id="linkedin-button" class="btn-facebook"
-          href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=776im3xq8cf4md&redirect_uri={{ hostUrl }}/login&state=fooobar&scope=r_liteprofile%20r_emailaddress%20w_member_social">
-          Facebook
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="separator-text">OR</div>
-  <div class="input-holder">
-    <div *ngIf="isRegister" class="email-password-holder">
-      <input type="text" [(ngModel)]="user" placeholder="USER" />
-    </div>
-    <div *ngIf="isRegister" >
-      <input type="text" [(ngModel)]="email" placeholder="EMAIL" />
-    </div>
-    <div *ngIf="!isRegister" class="email-password-holder">
-        <input type="text" [(ngModel)]="email" placeholder="EMAIL / USER" />
-    </div> 
-    <div>
-      <input type="password" [(ngModel)]="password" placeholder="PASSWORD" />
-    </div>
-    <div class="login-container">
-      <a id="password-login-button" class="btn-login" (click)="loginWithPassword()">
-        <span *ngIf="isRegister">Register</span>
-        <span *ngIf="!isRegister">Login</span>
-      </a>
-    </div>
-  </div>
+  
 </div>

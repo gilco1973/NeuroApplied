@@ -1,58 +1,49 @@
 h1 {
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1px;
-    line-height: 30px;
-    font-size:24px;
-    font-weight: normal;
-    margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 30px;
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 20px;
 }
 
 img {
-    min-width: 70px;
-    min-height: 70px;
+  width: 13rem;
+  height: auto;
 }
 
-.img-container{
-  width: 70px;
+.img-container {
+  width: 13rem;
   height: auto;
   margin: auto;
   margin-top: 8rem;
+  margin-bottom: 3rem;
 }
-.unique {
-    
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 20px;
-    letter-spacing: normal;
-    text-align: center;
-    color: #878787;
-  }
-  .single{
-    margin-top: 3.5rem;
-  }
-  .buttons-container{
-      display:flex;
-      margin-top:3.5rem;
-  }
-  .btn{
-    height: 50px;
-    width: 100px;
-    line-height: 35px;
-    background: #878787;
-    flex: 1;
-    margin: 5px;
-    border-radius: 5px;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: .2s;
-    box-shadow: 0px 2px 3px #8b8b8b;
-  }
-  .btn:hover{
-      background: #727171
-  }
+
+.signin {
+  color: black;
+  text-decoration: underline;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 100%;
+}
+.start-survey {
+  margin-top: 3.2rem;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+
+.buttons-container {
+  display: flex;
+  margin-top: 3.5rem;
+}
+

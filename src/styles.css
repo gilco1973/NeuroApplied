@@ -29,13 +29,13 @@ body {
   display: none !important;
 }
 .btn {
-  height: 45px;
-  width: 200px;
+  height: 4.5rem;
+  width: 20rem;
   line-height: 25px;
   background: #878787;
   flex: 1;
-  margin: 5px;
-  border-radius: 5px;
+  margin: .5rem;
+  border-radius: .5rem;
   text-align: center;
   color: white;
   text-decoration: none;
@@ -47,10 +47,23 @@ body {
 .btn:hover {
   background: #727171;
 }
+img {
+  width: 13rem;
+  height: auto;
+}
+
+.img-container {
+  width: 13rem;
+  height: auto;
+  margin: auto;
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+}
 .btn-blue {
   background-color: #7698ff !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+  padding: 1.5rem !important;
 }
 .txt-caps {
   font-size: 18px;
@@ -110,4 +123,9 @@ body {
   text-align: center;
   text-transform: none;
   color: #ffffff;
+}
+.login-container{
+  margin-top: 1rem;
+  margin:auto;
+  text-align: center;
 }

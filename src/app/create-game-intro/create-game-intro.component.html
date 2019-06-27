@@ -1,10 +1,23 @@
-<div class="text-box">
-    <h2 class="header-secondary">Hi {{user.firstName}},</h2>
-    <h1 class="header">
-      <span class="header-primary">YOU ARE FEW STEPS AWAY FROM GETTING THE ANSWERS YOU NEED IN ORDER TO MAKE BETTER DECISIONS</span>
-    </h1>
+<div class="container">
+    <h2 class="header-secondary">Hi, {{user.firstName}}</h2>
+    <div>
+      <p class="txt-caps">YOU ARE FEW STEPS AWAY </p>
+      <p class="txt-caps">FROM GETTING</p>
+      <p class="txt-caps">THE ANSWERS YOU NEED</p>
+      <p class="txt-caps">IN ORDER TO MAKE</p>
+      <p class="txt-caps">BETTER DECISIONS</p>
+      <p class="txt-caps">FOR YOUR BUSINESS</p>
+    </div>
+    <div style="position: relative">
+        <div class="img-container" style="width: 7rem;
+        height: auto;
+        margin: auto;
+        margin-bottom: 3rem;
+        margin-top: 3.2rem;">
+          <img src="../../assets/intro.png" alt="Image Place Holder" style="width:7rem;">
+        </div>
+      </div>
   </div>
-  <a class="btn-create"
-    (click)="createGame()">
-    Create a new survey
-  </a>
+  <div class="login-container">
+      <a class="btn btn-blue Sign-Up-Free txt-center " click="createGame()">Create a survey</a>
+    </div>

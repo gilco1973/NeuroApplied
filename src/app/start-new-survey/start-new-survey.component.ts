@@ -13,13 +13,18 @@ export class StartNewSurveyComponent implements OnInit {
     this.step1Items = [{
       itemType: 'input',
       title: 'Survey Name',
-      placeHolder: 'The name for your new survey',
+      placeHolder: 'The name of your new survey',
       items: ['']
     }, {
       itemType: 'country',
       title: 'Survey Location (country)',
       placeHolder: '',
       items: ['']
+    }, {
+      itemType: 'select',
+      title: 'Region',
+      placeHolder: '',
+      items: ['All']
     }];
   }
 

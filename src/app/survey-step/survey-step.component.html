@@ -1,4 +1,4 @@
-<div>{{title}}</div>
+<div class="step">Step {{stepNumber}}</div>
 <div *ngFor="let surveyStepItem of stepItems">
 <app-survey-step-item  [items]="surveyStepItem.items" [itemType]="surveyStepItem.itemType" [title]="surveyStepItem.title" [placeHolder]="surveyStepItem.placeHolder" >
 

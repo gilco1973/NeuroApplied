@@ -13,10 +13,14 @@ export class SurveyStepItemComponent implements OnInit {
   @Input() placeHolder: string;
   selection;
   constructor() {
-    
+
   }
 
   ngOnInit() {
+    $(document).ready(function () {
+     const elem: any =  $("#country");
+     elem.countrySelect();
+    });
   }
 
 }

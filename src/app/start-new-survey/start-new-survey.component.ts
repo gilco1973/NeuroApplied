@@ -16,10 +16,10 @@ export class StartNewSurveyComponent implements OnInit {
       placeHolder: 'The name for your new survey',
       items: ['']
     }, {
-      itemType: 'select',
+      itemType: 'country',
       title: 'Survey Location (country)',
       placeHolder: '',
-      items: ['Israel', 'USA']
+      items: ['']
     }];
   }
 

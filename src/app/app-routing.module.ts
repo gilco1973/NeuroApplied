@@ -8,6 +8,7 @@ import { GameCreatorComponent } from './game-creator/game-creator.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CreateGameIntroComponent } from './create-game-intro/create-game-intro.component';
 import { GetCurrentUserResolver } from './get-current-user.resolver';
+import { StartNewSurveyComponent } from './start-new-survey/start-new-survey.component';
 
 
 
@@ -35,6 +36,11 @@ const routes: Routes = [
   {
     path: 'intro',
     component: CreateGameIntroComponent,
+  //  resolve: { currentUser: GetCurrentUserResolver}
+  },
+  {
+    path: 'new-survey',
+    component: StartNewSurveyComponent,
   //  resolve: { currentUser: GetCurrentUserResolver}
   },
   {

@@ -19,6 +19,9 @@ import { MDBBootstrapModule, MDBModalRef } from 'angular-bootstrap-md';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { CreateGameIntroComponent } from './create-game-intro/create-game-intro.component';
 import { GetCurrentUserResolver } from './get-current-user.resolver';
+import { StartNewSurveyComponent } from './start-new-survey/start-new-survey.component';
+import { SurveyStepComponent } from './survey-step/survey-step.component';
+import { SurveyStepItemComponent } from './survey-step-item/survey-step-item.component';
 
 const config = new AuthServiceConfig([
   {
@@ -47,7 +50,10 @@ export function provideConfig() {
     RegisterComponent,
     WelcomeComponent,
     TopNavBarComponent,
-    CreateGameIntroComponent
+    CreateGameIntroComponent,
+    StartNewSurveyComponent,
+    SurveyStepComponent,
+    SurveyStepItemComponent
   ],
   imports: [
     BrowserModule,

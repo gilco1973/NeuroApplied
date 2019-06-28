@@ -1,0 +1,6 @@
+<div>{{title}}</div>
+<div *ngFor="let surveyStepItem of stepItems">
+<app-survey-step-item  [items]="surveyStepItem.items" [itemType]="surveyStepItem.itemType" [title]="surveyStepItem.title" [placeHolder]="surveyStepItem.placeHolder" >
+
+</app-survey-step-item>
+</div>

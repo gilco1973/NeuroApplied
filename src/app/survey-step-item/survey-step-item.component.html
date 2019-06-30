@@ -5,6 +5,13 @@
     <select *ngIf="itemType==='select'" class="txt-small-place-holder" [(ngModel)]="selection">
       <option *ngFor="let item of items">{{item}}</option>
     </select>
+    <select *ngIf="itemType==='select-parents'" class="txt-small-place-holder" [(ngModel)]="selectedCategoryHeader" (ngModelChange)="updateChildren()">
+      <option *ngFor="let item of items">{{item.key}}</option>
+    </select>
+    <select *ngIf="itemType==='select-children'" class="txt-small-place-holder" [(ngModel)]="svcSurvey.selectedSubCategory" (ngModelChange)="updateChildSelection(selectedChild)">
+      <option *ngFor="let item of svcSurvey.selectedCategory.children">{{item}}</option>
+    </select>
     <input id="country" *ngIf="itemType==='country'" type="text" class="input-box txt-small-place-holder" [(ngModel)]="selection"/>
+    <!-- <span *ngIf="add" [(ngModel)]="selection"><img src="../../assets/add.png" style="width:32px;height:32px;" (click)="addSubCategory()"></span> -->
   </div>
 </div>

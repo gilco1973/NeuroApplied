@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SurveyService } from '../survey.service';
 
 @Component({
   selector: 'app-start-new-survey',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-new-survey.component.scss']
 })
 export class StartNewSurveyComponent implements OnInit {
-  step1Items: { itemType: string; title: string; placeHolder: string; items: string[]; }[];
-  constructor() { }
+  step1Items: { itemType: string; title: string; placeHolder: string; items: any[]; }[];
+  step2Items: { itemType: string; title: string; placeHolder: string; items: any[]; }[];
+
+  constructor(private svcSurvey: SurveyService) { }
 
   ngOnInit() {
     this.step1Items = [{
@@ -24,7 +27,23 @@ export class StartNewSurveyComponent implements OnInit {
       itemType: 'select',
       title: 'Region',
       placeHolder: '',
-      items: ['All']
+      items: ['All', 'North', 'South', 'East', 'West', 'Central']
+    }];
+    this.step2Items = [{
+      itemType: 'select-parents',
+      title: 'Category',
+      placeHolder: '',
+      items: this.svcSurvey.categories
+    }, {
+      itemType: 'select-children',
+      title: 'Sub Category',
+      placeHolder: '',
+      items: this.svcSurvey.categories
+    }, {
+      itemType: 'add',
+      title: 'Add a sub category',
+      placeHolder: '',
+      items: ['']
     }];
   }
 

@@ -22,6 +22,7 @@ import { GetCurrentUserResolver } from './get-current-user.resolver';
 import { StartNewSurveyComponent } from './start-new-survey/start-new-survey.component';
 import { SurveyStepComponent } from './survey-step/survey-step.component';
 import { SurveyStepItemComponent } from './survey-step-item/survey-step-item.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 const config = new AuthServiceConfig([
   {
@@ -64,7 +65,8 @@ export function provideConfig() {
     SocialLoginModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatRadioModule
   ],
   providers: [
     {

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import { SurveyService, SurveyStepItem, SurveyStep } from '../survey.service';
 
 @Component({
   selector: 'app-survey-step',
@@ -7,11 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SurveyStepComponent implements OnInit {
 
-  @Input() stepNumber: number;
-  @Input() stepItems: { itemType: string, title: string, placeHolder: string, items: any[] }[];
-  constructor() { }
+  @Input() step: SurveyStep;
+  constructor(private svcSurvey: SurveyService) { }
 
   ngOnInit() {
-  }
 
+  }
 }

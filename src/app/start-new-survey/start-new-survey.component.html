@@ -1,4 +1,3 @@
 <div class="steps">
-  <app-survey-step class="survey-step" [stepNumber]="1" [stepItems]="step1Items"></app-survey-step>
-  <app-survey-step class="survey-step" [stepNumber]="2" [stepItems]="step2Items"></app-survey-step>
+  <app-survey-step *ngFor="let step of svcSurvey.steps" class="survey-step" [step]="step"></app-survey-step>
 </div>

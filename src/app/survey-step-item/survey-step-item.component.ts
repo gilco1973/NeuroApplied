@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { SurveyService } from '../survey.service';
+import { SurveyService, SurveyStepItem } from '../survey.service';
 
 @Component({
   selector: 'app-survey-step-item',
@@ -7,10 +7,7 @@ import { SurveyService } from '../survey.service';
   styleUrls: ['./survey-step-item.component.scss']
 })
 export class SurveyStepItemComponent implements OnInit, AfterViewInit {
-  @Input() title: string;
-  @Input() itemType: string;
-  @Input() items: any[] = [];
-  @Input() placeHolder: string;
+  @Input() stepItem: SurveyStepItem;
   selection;
   selectedChild;
   parent;
@@ -30,8 +27,8 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
       const elem: any = $("#country");
       elem.countrySelect();
     });
-    if (this.items && this.items.length && !this.selection) {
-      this.selection = this.items[0];
+    if (this.stepItem.items && this.stepItem.items.length && !this.selection) {
+      this.selection = this.stepItem.items[0];
     }
   }
   updateChildren() {

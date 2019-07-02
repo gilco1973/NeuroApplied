@@ -1,9 +1,21 @@
 import { Injectable } from '@angular/core';
 
+export class SurveyStep {
+  stepNumber: number;
+  surveyStepsItems: SurveyStepItem[];
+}
+export class SurveyStepItem {
+  itemType: string;
+  title: string;
+  placeHolder: string;
+  items: any[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class SurveyService {
+  steps: SurveyStep[] = [];
   selectedCategory: any;
   selectedSubCategory: any;
   categories: any[] = [
@@ -41,10 +53,10 @@ export class SurveyService {
       return selectedCategoryHeader === item.key;
     });
   }
-  updateSubCategory(subCategory){
+  updateSubCategory(subCategory) {
     this.selectedSubCategory = subCategory;
   }
-  constructor() { 
+  constructor() {
     this.selectedCategory = this.categories[0];
   }
 }

@@ -13,7 +13,8 @@ export class SurveyStepItem {
 export class Category {
   key: string;
   subs: SubCategory[];
-
+  selectedAttributes?: string[] = [];
+  attributes?: string[] = [];
 }
 export class SubCategory {
   parent: string;
@@ -26,20 +27,23 @@ export class SubCategory {
 export class SurveyService {
   steps: SurveyStep[] = [];
   selectedCategory: any;
+  attributes: string[] = ['Fun','Uplifting','Trustworthy','For someone...','Tasty','Goes well with'];
   categories: Category[] = [
     {
       key: 'Automotive', subs: [{
         parent: 'Automotive',
         children: ['Auction Services', 'Dealer Services', 'Tires', 'Vehicle Manufacturers'],
         selectedChild: 'Auction Services'
-      }]
+      }],
+      attributes: this.attributes
     },
     {
       key: 'Agencies', subs: [{
         parent: 'Agencies',
         children: ['Consulting Firms', 'Advertising Agencies', 'Communications', 'Broadcast Programming Publishers'],
         selectedChild: 'Consulting Firms'
-      }]
+      }],
+      attributes: this.attributes
     }, {
       key: 'Consumer Goods', subs: [{
         parent: 'Consumer Goods',
@@ -51,7 +55,8 @@ export class SurveyService {
         parent: 'Financial Services',
         children: ['Retail Banking', 'Credit Cards', 'Insurance Products', 'Investment Services', 'Lending / Mortgages'],
         selectedChild: 'Retail Banking'
-      }]
+      }],
+      attributes: this.attributes
     }, {
       key: 'Hospitality', subs: [{
         parent: 'Hospitality',
@@ -64,7 +69,8 @@ export class SurveyService {
         children: ['Industrial Tools', 'Shipping Products', 'Consumer Packaging',
           'Home Improvement', 'Products', 'Residential Construction'],
         selectedChild: 'Industrial Tools'
-      }]
+      }],
+      attributes: this.attributes
     }, {
       key: 'Medical / Healthcare', subs: [{
         parent: 'Medical / Healthcare',
@@ -76,13 +82,15 @@ export class SurveyService {
         parent: 'Retail',
         children: ['Home Improvement', 'Grocery', 'Merchandise', 'Warehouse Club', 'Sporting Goods', 'Specialty Foods', 'Electronics'],
         selectedChild: 'Home Improvement'
-      }]
+      }],
+      attributes: this.attributes
     }, {
       key: 'Technology / Utilities', subs: [{
         parent: 'Technology / Utilities',
         children: ['Telecommunications', 'Cable / Sattlelite TV', 'Internet Security', 'Energy'],
         selectedChild: 'Telecommunications'
-      }]
+      }],
+      attributes: this.attributes
     }];
   updateCategoryObject(selectedCategoryHeader) {
     this.selectedCategory = this.categories.find((item) => {

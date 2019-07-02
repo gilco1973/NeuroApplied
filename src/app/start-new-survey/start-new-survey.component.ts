@@ -48,6 +48,11 @@ export class StartNewSurveyComponent implements OnInit {
         title: '',
         placeHolder: '',
         items: ['']
+      }, {
+        itemType: 'attributes',
+        title: 'Attributes',
+        placeHolder: '',
+        items: this.svcSurvey.selectedCategory.attributes
       }]
     });
 

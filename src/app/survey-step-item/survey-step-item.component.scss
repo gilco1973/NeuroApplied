@@ -1,13 +1,41 @@
 .example-radio-button {
-    margin: 5px;
-  }
-img{
-  width:32px;
+  margin: 5px;
 }
-.input-holder{
+img {
+  width: 32px;
+}
+.input-holder {
   display: flex;
   flex-direction: column;
 }
-.margin-bottom-5{
-  margin-bottom:5px;
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+::ng-deep {
+  .multiselect-dropdown {
+    color:#878787;
+    font-size: 14px !important;
+    outline: none;
+    width: 290px;
+    height: 50px;
+    border-radius: 6px;
+    border: solid 1px #7698ff;
+    background-color: #fff;
+  }
+  .multiselect-dropdown .dropdown-btn{
+    border:none !important;
+    margin-top: 3%;
+    
+  }
+  .multiselect-dropdown .dropdown-btn .dropdown-down{
+    
+      border-top: 7px solid #8a8a8a !important;
+      border-left: 3px solid transparent !important;
+      border-right: 3px solid transparent !important;
+    
+  }
+  .multiselect-item-checkbox input[type=checkbox] + div:before{
+    border-radius: 50% !important;
+    border-color: #7698ff !important;
+  }
 }

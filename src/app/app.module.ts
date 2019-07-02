@@ -23,6 +23,7 @@ import { StartNewSurveyComponent } from './start-new-survey/start-new-survey.com
 import { SurveyStepComponent } from './survey-step/survey-step.component';
 import { SurveyStepItemComponent } from './survey-step-item/survey-step-item.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 const config = new AuthServiceConfig([
   {
@@ -62,6 +63,7 @@ export function provideConfig() {
     AppRoutingModule,
     MatSnackBarModule,
     NgxSpinnerModule,
+    NgMultiSelectDropDownModule,
     SocialLoginModule,
     HttpClientModule,
     BrowserAnimationsModule,

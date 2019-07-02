@@ -12,6 +12,10 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
   selectedChild;
   parent;
   selectedCategoryHeader;
+  dropdownSettings: {
+    singleSelection: boolean; idField: string; textField: string;
+    selectAllText: string; unSelectAllText: string; allowSearchFilter: boolean;
+  };
   constructor(private svcSurvey: SurveyService) {
 
   }
@@ -30,16 +34,24 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
     if (this.stepItem.items && this.stepItem.items.length && !this.selection) {
       this.selection = this.stepItem.items[0];
     }
-    if(this.svcSurvey.selectedCategory){
+    if (this.svcSurvey.selectedCategory) {
       this.selectedCategoryHeader = this.svcSurvey.selectedCategory.key;
     }
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'id',
+      textField: 'text',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      allowSearchFilter: false
+    };
   }
   updateChildren() {
-    if(this.selectedCategoryHeader){
-    console.log('selected item:' + this.selectedCategoryHeader);
-    this.svcSurvey.updateCategoryObject(this.selectedCategoryHeader);
+    if (this.selectedCategoryHeader) {
+      console.log('selected item:' + this.selectedCategoryHeader);
+      this.svcSurvey.updateCategoryObject(this.selectedCategoryHeader);
     }
-    
+
 
   }
   updateChildSelection(selectedChild) {

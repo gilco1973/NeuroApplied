@@ -8,13 +8,16 @@
   border-style: none none solid none;
   max-height: 50px;
 }
+.navbar{
+  background: #fafafa !important;
+}
 .fixed-pos{
     margin: auto !important;
     position: fixed !important;
     max-width: 600px !important;
     width: 100% !important;
     top: 0 !important;
-    z-index: 11 !important;
+    z-index: 1111 !important;
     left:0 !important;
 }
 .not-fixed-pos{

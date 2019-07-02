@@ -11,9 +11,9 @@
 
 html {
   font-size: 62.5%;
-  position: fixed;
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   height: 100vh;
   width: 100vw;
 }
@@ -76,6 +76,7 @@ img {
   color: #000000;
 }
 .txt-small {
+  outline: none;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -83,8 +84,10 @@ img {
   color: #676767;
   margin-top: 1rem;
   margin-left: 0.5rem;
+  text-align: initial;
 }
 .txt-small-place-holder {
+  outline: none;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -93,14 +96,17 @@ img {
   letter-spacing: normal;
   color: #878787;
   padding-left: 1rem;
+  text-align: initial;
   /* margin-bottom: 1rem; */
 }
 select,
 .input-box {
+  outline: none;
   width: 290px;
   height: 50px;
   border-radius: 6px;
   border: solid 1px #7698ff;
+  background-color: #fff;
 }
 
 .margin-bottom-3 {
@@ -115,15 +121,20 @@ select,
   position: absolute;
   width: 100%;
 }
-.Sign-Up-Free {
+.txt-font14 {
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  text-align: center;
+  text-align: initial;
   text-transform: none;
+}
+.txt-font14-black {
+  color: #000;
+}
+.txt-font14-white {
   color: #ffffff;
 }
 .login-container{
@@ -133,7 +144,13 @@ select,
 }
 
 .step{
-  margin-top: 5rem;
+  margin-top: 2.2rem;
     text-align: center;
     font-size: 1.8rem;
+}
+.txt-center{
+  text-align: center;
+}
+.txt-left{
+  text-align: left;
 }

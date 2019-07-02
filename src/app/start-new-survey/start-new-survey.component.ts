@@ -41,7 +41,7 @@ export class StartNewSurveyComponent implements OnInit {
       items: this.svcSurvey.categories
     }, {
       itemType: 'add',
-      title: 'Add a sub category',
+      title: '',
       placeHolder: '',
       items: ['']
     }];

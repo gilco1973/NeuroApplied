@@ -50,6 +50,8 @@ export class StartNewSurveyComponent implements OnInit {
         items: ['']
       }]
     });
+
+    this.svcSurvey.selectedCategory = this.svcSurvey.categories[0];
   }
 
 }

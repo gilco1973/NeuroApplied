@@ -16,7 +16,7 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
 
   }
   addSubCategory() {
-
+    this.svcSurvey.addSubCategory();
   }
   ngAfterViewInit(): void {
 
@@ -30,6 +30,9 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
     if (this.stepItem.items && this.stepItem.items.length && !this.selection) {
       this.selection = this.stepItem.items[0];
     }
+    if(this.svcSurvey.selectedCategory){
+      this.selectedCategoryHeader = this.svcSurvey.selectedCategory.key;
+    }
   }
   updateChildren() {
     if(this.selectedCategoryHeader){
@@ -41,6 +44,6 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
   }
   updateChildSelection(selectedChild) {
     console.log('selected child:' + selectedChild);
-    this.svcSurvey.selectedSubCategory = selectedChild;
+    //this.svcSurvey.selectedSubCategory = selectedChild;
   }
 }

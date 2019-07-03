@@ -20,7 +20,7 @@
         <div>
             <input class="input-box txt-small-place-holder" type="text" [(ngModel)]="password" placeholder="Should include at least one digit" />
         </div> 
-        <div class="login-container" style="margin:auto;margin-top:1rem">
+        <div class="login-container">
           <a id="password-login-button" class="btn btn-blue" (click)="loginWithPassword()">
             <span class="txt-font14 txt-font14-white txt-center" *ngIf="isRegister">Sign Up Free</span>
             <span class="txt-font14 txt-font14-white txt-center" *ngIf="!isRegister">Login</span>

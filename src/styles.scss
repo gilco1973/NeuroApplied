@@ -31,7 +31,7 @@ body {
 .btn {
   height: 4.5rem;
   width: 20rem;
-  line-height: 25px;
+  line-height: 50%;
   background: #878787;
   flex: 1;
   margin: .5rem;
@@ -138,9 +138,10 @@ select,
   color: #ffffff;
 }
 .login-container{
-  margin-top: 1rem;
   margin:auto;
   text-align: center;
+  margin:auto;
+  margin-top:1rem;
 }
 
 .step{

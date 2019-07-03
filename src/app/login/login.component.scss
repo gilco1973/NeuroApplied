@@ -17,10 +17,9 @@
   flex-wrap: wrap;
   width: 14.3rem;
 }
-.social-container{
-  margin-top:5.5rem;
+.social-container {
+  margin-top: 5.5rem;
 }
-
 
 /* a {
   display: inline-block;
@@ -36,39 +35,39 @@
 
 /* Social Buttons Style */
 .btn-social {
-  background-position: 0.5em;
-  background-repeat: no-repeat;
-  background-size: 1.8em;
-  border-radius: 0.8rem;
-  color: white;
+  width: 13.7rem;
+  height: 4rem;
+  border: solid 1px #7698ff;
+  color: #000000;
   cursor: pointer;
-  height: 5rem;
-  padding: 0rem 0em 0 1.5em;
+  padding: 0rem 0em 0 1em;
   text-decoration: none;
   transition: all 0.5s;
   text-align: center;
-  font-size: 1.6rem;
-  margin: 1rem;
+  font-size: 1.4rem;
+  margin: .5rem;
   margin-right: 0.7rem;
-  line-height: 5rem;
-  box-shadow: 0px 2px 3px #8b8b8b;
+  line-height: 4rem;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-origin: content-box;
 }
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  margin:0;
+  margin: 0;
 }
 .separator-text {
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.71;
-    letter-spacing: -0.08px;
-    text-align: center;
-    color: #676767;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: -0.08px;
+  text-align: center;
+  color: #676767;
 }
 
 .column {
@@ -77,20 +76,19 @@
   flex-basis: 100%;
   flex: 1;
 }
-
+$social-background: #4c70ba;
 .btn-google {
-  background-color: #dd4b39;
   background-image: url("../../assets/google.svg");
+  
 }
 .btn-google:hover {
-  background-color: #e47365;
+  background-color: $social-background;
 }
 .btn-google:active {
-  background-color: #c23321;
+  background-color: $social-background;
 }
 
 .btn-facebook {
-  background-color: #3b5998;
   background-image: url("../../assets/facebook.svg");
 }
 .btn-facebook:hover {
@@ -112,14 +110,13 @@
 }
 
 .btn-microsoft {
-  background-color: #e3b30d;
-  background-image: url("../../assets/microsoft.svg");
+  background-image: url("../../assets/365.svg");
 }
 .btn-microsoft:hover {
-  background-color: #f3c730;
+  background-color:  $social-background;
 }
 .btn-microsoft:active {
-  background-color: #b38d0a;
+  background-color:  $social-background;
 }
 
 .btn-github {
@@ -156,14 +153,13 @@
 }
 
 .btn-linkedin {
-  background-color: #0b5ea3;
   background-image: url("../../assets/linkedin.svg");
 }
 .btn-linkedin:hover {
-  background-color: #0e7ad3;
+  background-color: $social-background;
 }
 .btn-linkedin:active {
-  background-color: #084273;
+  background-color: $social-background;
 }
 
 .btn-evernote {
@@ -216,25 +212,7 @@
   padding-left: 1rem;
   margin-bottom: 1rem;
 } */
-.btn-login {
-  background-color: #f36c2a;
-    height: 5rem;
-    float: left;
-    padding: 0;
-    width: 13.5rem;
-    color: white !important;
-    margin-left: 50%;
-    transform: translate(-50%, 0px);
-    box-shadow: 0px 2px 3px #8b8b8b;
-    
-}
 
-.btn-login:hover {
-  background-color: #4c70ba;
-}
-.btn-login:active {
-  background-color: #2d4373;
-}
 .main-header {
   font-size: 18px;
   font-weight: normal;
@@ -245,16 +223,16 @@
   text-align: center;
   color: #000000;
 }
-.email-password-holder{
+.email-password-holder {
   margin-top: 1.8rem;
 }
 div {
   font-size: 1.4rem;
 }
-.input-holder{
+.input-holder {
   display: flex;
   flex-direction: column;
 }
-.txt-center{
+.txt-center {
   text-align: center;
 }

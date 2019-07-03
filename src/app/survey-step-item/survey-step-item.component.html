@@ -17,8 +17,10 @@
   </div>
   <input id="country" *ngIf="stepItem.itemType==='country'" type="text" class="input-box txt-small-place-holder"
     [(ngModel)]="selection" />
-  <div *ngIf="stepItem.itemType==='add'" name="add" class="txt-font14 txt-font14-black"><img src="../../assets/add.png"
-      (click)="addSubCategory()">Add a sub category
+  <div *ngIf="stepItem.itemType==='add'" name="add"  class="add-sub">
+    <img src="../../assets/contact-add.svg"
+      (click)="addSubCategory()">
+      <span class="txt-font14 txt-font14-black">Add a sub category</span>
   </div>
   <ng-multiselect-dropdown *ngIf="stepItem.itemType==='attributes'" [placeholder]="''"
     [data]="stepItem.items" [(ngModel)]="svcSurvey.selectedCategory.selectedAttributes"

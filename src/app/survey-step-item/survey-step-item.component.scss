@@ -11,9 +11,24 @@ img {
 .margin-bottom-5 {
   margin-bottom: 5px;
 }
+.add-sub {
+  display: inline-block;
+  text-align: left;
+  & img {
+    line-height: 150%;
+    margin-right: 9px;
+    width: 20px;
+    height: auto;
+
+    &:hover{
+      box-shadow: 0px 0px 3px  #7698ff !important;
+      border-radius: 50%;
+    }
+  }
+}
 ::ng-deep {
   .multiselect-dropdown {
-    color:#878787;
+    color: #878787;
     font-size: 14px !important;
     outline: none;
     width: 290px;
@@ -22,19 +37,16 @@ img {
     border: solid 1px #7698ff;
     background-color: #fff;
   }
-  .multiselect-dropdown .dropdown-btn{
-    border:none !important;
+  .multiselect-dropdown .dropdown-btn {
+    border: none !important;
     margin-top: 3%;
-    
   }
-  .multiselect-dropdown .dropdown-btn .dropdown-down{
-    
-      border-top: 7px solid #8a8a8a !important;
-      border-left: 3px solid transparent !important;
-      border-right: 3px solid transparent !important;
-    
+  .multiselect-dropdown .dropdown-btn .dropdown-down {
+    border-top: 7px solid #8a8a8a !important;
+    border-left: 3px solid transparent !important;
+    border-right: 3px solid transparent !important;
   }
-  .multiselect-item-checkbox input[type=checkbox] + div:before{
+  .multiselect-item-checkbox input[type="checkbox"] + div:before {
     border-radius: 50% !important;
     border-color: #7698ff !important;
   }

@@ -31,7 +31,8 @@ export class StartNewSurveyComponent implements OnInit {
           itemType: 'add',
           title: '',
           addTitle: '*Add a business question',
-          placeHolder: ''
+          placeHolder: '',
+          itemTypeToAdd: 'business'
         }, {
           itemType: 'select-multi',
           title: 'Research setup',
@@ -42,7 +43,8 @@ export class StartNewSurveyComponent implements OnInit {
           itemType: 'add',
           title: '',
           addTitle: '*Add a research setup',
-          placeHolder: ''
+          placeHolder: '',
+          itemTypeToAdd: 'research'
         }]
     });
     this.svcSurvey.steps.push({
@@ -60,7 +62,8 @@ export class StartNewSurveyComponent implements OnInit {
         itemType: 'add',
         title: '',
         addTitle: '*Add a sub category',
-        placeHolder: ''
+        placeHolder: '',
+        itemTypeToAdd: 'category'
       }, {
         itemType: 'select-multi',
         title: 'Attributes',

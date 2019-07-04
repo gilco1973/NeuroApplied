@@ -1,6 +1,48 @@
-.Line-2-Copy {
+.line {
     width: 290px;
     height: 2px;
     opacity: 0.48;
     border: solid 1px #979797;
+  }
+  img{
+    width:19.6px;
+    height:34.6px;
+    margin-left: 10px;
+  }
+  .gender-container{
+      display: inline-flex;
+      width: 80%;
+      margin: 2rem 0;
+      margin-right:20%;
+  }
+  .age-container{
+    display: inline-flex;
+    width: 80%;
+    margin: 2rem 0;
+    margin-right:20%;
+    line-height: 6px;
+}
+  .children{
+    margin-left: 20px;
+    padding-left: 20px;
+  }
+  .age-view {
+    width: 81px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: #7698ff;
+    margin: auto;
+    color: white;
+    font-size: 14px;
+    line-height: 28px;
+  }
+  .checkmark {
+    position: absolute;
+    top: 10px;
+    left: 3px;
+    width: 15px;
+    height: 15px;
+    border: solid 1px #979797;
+    border-radius: 50%;
+    background-color: transparent;
   }

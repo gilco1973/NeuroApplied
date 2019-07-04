@@ -16,14 +16,19 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
     singleSelection: boolean; idField: string; textField: string; itemsShowLimit: number;
     selectAllText: string; unSelectAllText: string; allowSearchFilter: boolean;
   };
+  showTargetAudience: boolean;
   constructor(private svcSurvey: SurveyService) {
 
   }
-  addSubCategory() {
-    this.svcSurvey.addSubCategory();
+  addSubItem($event) {
+    console.log($event);
+    this.svcSurvey.addSubItem($event);
   }
   ngAfterViewInit(): void {
 
+  }
+  checkBoxClicked($event, item) {
+    this.showTargetAudience = (item === 'Specify target audience');
   }
 
   ngOnInit() {

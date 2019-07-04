@@ -11,5 +11,7 @@ export class TargetAudienceComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  checkBoxClicked($event, item) {
+    console.log(item);
+  }
 }

@@ -12,14 +12,16 @@ export class SurveyStepItem {
   items?: any[];
   selectedItems?: any[];
   addTitle?: string;
+  itemTypeToAdd?: string;
+  info?: string;
 }
 export class Category {
   key: string;
-  subs: SubCategory[];
+  subs: SubItem[];
   selectedAttributes?: string[] = [];
   attributes?: string[] = [];
 }
-export class SubCategory {
+export class SubItem {
   parent: string;
   children: string[];
   selectedChild?: string;
@@ -103,6 +105,8 @@ export class SurveyService {
     }];
   selectedBusinessQuestions: any[];
   selectedResearchSetups: any[];
+  selectedResearch: any;
+  selectedBusiness: any;
 
   updateCategoryObject(selectedCategoryHeader) {
     this.selectedCategory = this.categories.find((item) => {
@@ -113,14 +117,28 @@ export class SurveyService {
   constructor() {
     this.selectedCategory = this.categories[0];
   }
-  addSubCategory() {
+  addSubItem(itemToAdd: string) {
+    const subItem = new SubItem();
+    switch (itemToAdd) {
+      case 'category':
+        subItem.parent = this.selectedCategory.subs[0].parent;
+        subItem.children = this.selectedCategory.subs[0].children;
+        subItem.selectedChild = this.selectedCategory.subs[0].selectedChild;
+        this.selectedCategory.subs.push(subItem);
+        break;
+      case 'research':
+          subItem.children = this.selectedResearch.subs[0].children;
+          subItem.selectedChild = this.selectedResearch.subs[0].selectedChildren;
+          this.selectedResearch.subs.push(subItem);
+        break;
+        case 'business':
+          subItem.children = this.selectedBusiness.subs[0].children;
+          subItem.selectedChild = this.selectedBusiness.subs[0].selectedChildren;
+          this.selectedBusiness.subs.push(subItem);
+        break;
+    }
     if (!this.selectedCategory) {
       return;
     }
-    const newSub = new SubCategory();
-    newSub.parent = this.selectedCategory.subs[0].parent;
-    newSub.children = this.selectedCategory.subs[0].children;
-    newSub.selectedChild = this.selectedCategory.subs[0].selectedChild;
-    this.selectedCategory.subs.push(newSub);
   }
 }

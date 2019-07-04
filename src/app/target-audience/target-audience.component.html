@@ -1,3 +1,26 @@
-<p>
-  target-audience works!
-</p>
+<div class="line"></div>
+<div class="gender-container">
+  <span class="txt-small">Gender</span>
+
+  <span class="checkbox container txt-font14-black children">
+    <input type="checkbox" class="checkbox" (click)="checkBoxClicked($event,item)" [value]="item">
+    {{item}}
+    <span (click)="checkBoxClicked($event,item)" class="checkmark">
+      
+    </span>
+    <img src="../../assets/boy.svg">
+  </span>
+  <span class="checkbox container txt-font14-black children">
+    <input type="checkbox" class="checkbox" (click)="checkBoxClicked($event,item)" [value]="item">
+    {{item}}
+    <span (click)="checkBoxClicked($event,item)" class="checkmark">
+      
+    </span>
+    <img src="../../assets/girl.svg">
+  </span>
+</div>
+<div class="age-container">
+    <span class="txt-small">Age</span>
+    <span class="age-view">18-72</span>
+</div>
+<div class="line"></div>

@@ -8,7 +8,9 @@ export class SurveyStepItem {
   itemType: string;
   title: string;
   placeHolder: string;
-  items: any[];
+  items?: any[];
+  selectedItems?: any[];
+  addTitle?: string;
 }
 export class Category {
   key: string;
@@ -26,8 +28,14 @@ export class SubCategory {
 })
 export class SurveyService {
   steps: SurveyStep[] = [];
+  businessQuestions: string[] = ['Why sales are declining?',
+    'Why custumers churn is high?',
+    'Why employees churn is high?',
+    'Why customers are leaving?',
+    'Why do we get low rating in?',
+    'How effective is my messaging?'];
   selectedCategory: any;
-  attributes: string[] = ['Fun','Uplifting','Trustworthy','For someone...','Tasty','Goes well with'];
+  attributes: string[] = ['Fun', 'Uplifting', 'Trustworthy', 'For someone...', 'Tasty', 'Goes well with'];
   categories: Category[] = [
     {
       key: 'Automotive', subs: [{
@@ -92,6 +100,9 @@ export class SurveyService {
       }],
       attributes: this.attributes
     }];
+  selectedBusinessQuestions: any[];
+  selectedResearchSetups: any[];
+
   updateCategoryObject(selectedCategoryHeader) {
     this.selectedCategory = this.categories.find((item) => {
       return selectedCategoryHeader === item.key;

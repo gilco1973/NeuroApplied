@@ -13,7 +13,7 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
   parent;
   selectedCategoryHeader;
   dropdownSettings: {
-    singleSelection: boolean; idField: string; textField: string;
+    singleSelection: boolean; idField: string; textField: string; itemsShowLimit: number;
     selectAllText: string; unSelectAllText: string; allowSearchFilter: boolean;
   };
   constructor(private svcSurvey: SurveyService) {
@@ -41,6 +41,7 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
       singleSelection: false,
       idField: 'id',
       textField: 'text',
+      itemsShowLimit: 1,
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
       allowSearchFilter: false

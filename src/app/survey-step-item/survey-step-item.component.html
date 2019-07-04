@@ -20,10 +20,10 @@
   <div *ngIf="stepItem.itemType==='add'" name="add"  class="add-sub">
     <img src="../../assets/contact-add.svg"
       (click)="addSubCategory()">
-      <span class="txt-font14 txt-font14-black">Add a sub category</span>
+      <span class="txt-font14 txt-font14-black">{{stepItem.addTitle}}</span>
   </div>
-  <ng-multiselect-dropdown *ngIf="stepItem.itemType==='attributes'" [placeholder]="''"
-    [data]="stepItem.items" [(ngModel)]="svcSurvey.selectedCategory.selectedAttributes"
+  <ng-multiselect-dropdown *ngIf="stepItem.itemType==='select-multi'" [placeholder]="''"
+    [data]="stepItem.items" [(ngModel)]="stepItem.selectedItems"
     [settings]="dropdownSettings">
   </ng-multiselect-dropdown>
 </div>

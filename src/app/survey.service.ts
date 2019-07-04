@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 export class SurveyStep {
   stepNumber: number;
   surveyStepsItems: SurveyStepItem[];
+  header?: string;
 }
 export class SurveyStepItem {
   itemType: string;

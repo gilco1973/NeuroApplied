@@ -17,13 +17,19 @@
   </div>
   <input id="country" *ngIf="stepItem.itemType==='country'" type="text" class="input-box txt-small-place-holder"
     [(ngModel)]="selection" />
-  <div *ngIf="stepItem.itemType==='add'" name="add"  class="add-sub">
-    <img src="../../assets/contact-add.svg"
-      (click)="addSubCategory()">
-      <span class="txt-font14 txt-font14-black">{{stepItem.addTitle}}</span>
+  <div *ngIf="stepItem.itemType==='add'" name="add" class="add-sub">
+    <img src="../../assets/contact-add.svg" (click)="addSubCategory()">
+    <span class="txt-font14 txt-font14-black">{{stepItem.addTitle}}</span>
   </div>
-  <ng-multiselect-dropdown *ngIf="stepItem.itemType==='select-multi'" [placeholder]="''"
-    [data]="stepItem.items" [(ngModel)]="stepItem.selectedItems"
-    [settings]="dropdownSettings">
+  <div *ngIf="stepItem.itemType==='cbGroup'" name="targetAudience">
+    <div class="checkbox container txt-font14-black"  *ngFor="let item of stepItem.items">
+      <input type="checkbox" class="checkbox"
+          [value]="item">
+        {{item}}
+        <span class="checkmark"></span>
+    </div>
+  </div>
+  <ng-multiselect-dropdown *ngIf="stepItem.itemType==='select-multi'" [placeholder]="''" [data]="stepItem.items"
+    [(ngModel)]="stepItem.selectedItems" [settings]="dropdownSettings">
   </ng-multiselect-dropdown>
 </div>

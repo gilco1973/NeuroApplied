@@ -66,6 +66,10 @@ export class StartNewSurveyComponent implements OnInit {
         title: 'Attributes',
         placeHolder: '',
         items: this.svcSurvey.selectedCategory.attributes
+      }, {
+        itemType: 'input',
+        title: '*Add attributes (Add values not in list)',
+        placeHolder: 'Write here',
       }]
     });
     this.svcSurvey.steps.push({
@@ -84,6 +88,16 @@ export class StartNewSurveyComponent implements OnInit {
         placeHolder: '',
         items: ['All', 'North', 'South', 'East', 'West', 'Central'],
         selectedItems: this.selectedRegion
+      }]
+    });
+    this.svcSurvey.steps.push({
+      stepNumber: 4,
+      header: 'Define target audience',
+      surveyStepsItems: [{
+        itemType: 'cbGroup',
+        title: '',
+        placeHolder: '',
+        items: ['For self distribution', 'Specify target audience']
       }]
     });
     this.svcSurvey.selectedCategory = this.svcSurvey.categories[0];

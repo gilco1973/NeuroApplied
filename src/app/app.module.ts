@@ -10,9 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
-import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from 'angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
 import { RequestInterceptor } from './request-interceptor.service';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MDBBootstrapModule, MDBModalRef } from 'angular-bootstrap-md';
@@ -22,8 +22,9 @@ import { GetCurrentUserResolver } from './get-current-user.resolver';
 import { StartNewSurveyComponent } from './start-new-survey/start-new-survey.component';
 import { SurveyStepComponent } from './survey-step/survey-step.component';
 import { SurveyStepItemComponent } from './survey-step-item/survey-step-item.component';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { TargetAudienceComponent } from './target-audience/target-audience.component';
 
 const config = new AuthServiceConfig([
   {
@@ -55,7 +56,8 @@ export function provideConfig() {
     CreateGameIntroComponent,
     StartNewSurveyComponent,
     SurveyStepComponent,
-    SurveyStepItemComponent
+    SurveyStepItemComponent,
+    TargetAudienceComponent
   ],
   imports: [
     BrowserModule,

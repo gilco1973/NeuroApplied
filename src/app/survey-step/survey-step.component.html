@@ -1,6 +1,9 @@
 <div class="step">
-  <div>Step {{step.stepNumber}}</div>
-    <app-survey-step-item *ngFor="let surveyStepItem of step.surveyStepsItems" [stepItem]="surveyStepItem">
+  <div class="step-title">
+    <div>Step {{step.stepNumber}}</div>
+    <div *ngIf="step.header" class="step-header">{{step.header}}</div>
+  </div>
+  <app-survey-step-item *ngFor="let surveyStepItem of step.surveyStepsItems" [stepItem]="surveyStepItem">
 
-    </app-survey-step-item>
+  </app-survey-step-item>
 </div>

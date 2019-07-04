@@ -137,6 +137,30 @@ select,
 .txt-font14-white {
   color: #ffffff;
 }
+.add-sub {
+  display: inline-block;
+  text-align: left;
+  margin-bottom:2.7rem;
+  & img {
+    line-height: 150% !important;
+    margin-right: 9px !important;
+    width: 20px !important;
+    height: auto;
+
+    &:hover{
+      box-shadow: 0px 0px 3px  #7698ff !important;
+      border-radius: 50%;
+    }
+  }
+}
+.neuro-checkbox {
+    width: 15px;
+    height: 15px;
+    border: solid 1px #979797;
+    border-radius:50%;
+    background: transparent;
+  margin: 5px;
+}
 .login-container{
   margin:auto;
   text-align: center;

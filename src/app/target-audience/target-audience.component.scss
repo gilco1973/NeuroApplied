@@ -46,3 +46,60 @@
     border-radius: 50%;
     background-color: transparent;
   }
+  // We need to use ::ng-deep to overcome view encapsulation
+::ng-deep {
+  .custom-slider .ng5-slider .ng5-slider-bar {
+    background: #7698ff;
+    height: 1px;
+  }
+  .custom-slider .ng5-slider .ng5-slider-selection {
+    background: #7698ff;
+  }
+  .custom-slider .ng5-slider .ng5-slider-model-value,
+  .custom-slider .ng5-slider .ng5-slider-model-high {
+    display: none;
+  }
+  .custom-slider .ng5-slider .ng5-slider-pointer {
+    width: 19px;
+    height: 19px;
+    border: solid 1px #7698ff;
+    background-color: #fcfcfc;
+    top: -10px;
+    outline: none;
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-pointer:after {
+    display: none;
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-bubble {
+    bottom: 14px;
+  }
+  .ng5-slider .ng5-slider-bubble.ng5-slider-limit,
+  .custom-slider .ng5-slider .ng5-slider-limit {
+    color: #676767 !important;
+    font-size: 12px;
+  }
+  .ng5-slider .ng5-slider-bar-wrapper {
+    left: 20px !important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: -16px;
+    padding-top: 16px;
+    width: 80% !important;
+    height: 32px;
+    z-index: 1;
+}
+  .custom-slider .ng5-slider .ng5-slider-tick {
+    width: 1px;
+    height: 10px;
+    margin-left: 4px;
+    border-radius: 0;
+    background: #ffe4d1;
+    top: -1px;
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-tick.ng5-slider-selected {
+    background: #7698ff;
+  }
+}

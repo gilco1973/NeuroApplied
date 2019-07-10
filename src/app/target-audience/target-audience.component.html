@@ -6,7 +6,7 @@
     <input type="checkbox" class="checkbox" (click)="checkBoxClicked($event,item)" [value]="item">
     {{item}}
     <span (click)="checkBoxClicked($event,item)" class="checkmark">
-      
+
     </span>
     <img src="../../assets/boy.svg">
   </span>
@@ -14,16 +14,35 @@
     <input type="checkbox" class="checkbox" (click)="checkBoxClicked($event,item)" [value]="item">
     {{item}}
     <span (click)="checkBoxClicked($event,item)" class="checkmark">
-      
+
     </span>
     <img src="../../assets/girl.svg">
   </span>
 </div>
+<div class="line"></div>
 <div class="age-container">
-    <span class="txt-small">Age</span>
-    <span class="age-view">{{value}}-{{highValue}}</span>
+  <span class="txt-small">Age</span>
+  <span class="age-view">{{value}}-{{highValue}}</span>
 </div>
 <div class="custom-slider">
   <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
 </div>
 <div class="line"></div>
+<div class="input-holder">
+  <div class="txt-small">Income levels (per year)</div>
+  <ng-multiselect-dropdown [placeholder]="''" [data]="incomes" [(ngModel)]="selectedIncomes"
+    [settings]="dropdownSettings">
+  </ng-multiselect-dropdown>
+  <div class="txt-small">Education</div>
+  <ng-multiselect-dropdown [placeholder]="''" [data]="educations" [(ngModel)]="selectedEducations"
+    [settings]="dropdownSettings">
+  </ng-multiselect-dropdown>
+  <div class="txt-small">Religion</div>
+  <ng-multiselect-dropdown [placeholder]="''" [data]="religions" [(ngModel)]="selectedReligions"
+    [settings]="dropdownSettings">
+  </ng-multiselect-dropdown>
+  <div class="txt-small">Ethnicity</div>
+  <ng-multiselect-dropdown [placeholder]="''" [data]="ethnicities" [(ngModel)]="selectedEthnicities"
+    [settings]="dropdownSettings">
+  </ng-multiselect-dropdown>
+</div>

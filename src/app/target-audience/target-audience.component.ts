@@ -19,6 +19,18 @@ export class TargetAudienceComponent implements OnInit {
       return value + 'yrs';
     }
   };
+  dropdownSettings: {
+    singleSelection: boolean; idField: string; textField: string; itemsShowLimit: number;
+    selectAllText: string; unSelectAllText: string; allowSearchFilter: boolean;
+  };
+  selectedEthnicities: any[] = [];
+  selectedEducations: any[] = [];
+  selectedReligions: any[] = [];
+  selectedIncomes: any[] = [];
+  incomes: any[] = [];
+  religions: any[] = [];
+  ethnicities: any[] = [];
+  educations: any[] = [];
   constructor() { }
 
   ngOnInit() {

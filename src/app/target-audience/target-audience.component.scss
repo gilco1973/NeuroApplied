@@ -1,8 +1,10 @@
 .line {
     width: 290px;
-    height: 2px;
+    height: 1px;
     opacity: 0.48;
     border: solid 1px #979797;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   img{
     width:19.6px;
@@ -12,13 +14,13 @@
   .gender-container{
       display: inline-flex;
       width: 80%;
-      margin: 2rem 0;
+      margin: 0;
       margin-right:20%;
   }
   .age-container{
     display: inline-flex;
     width: 80%;
-    margin: 2rem 0;
+    margin: 1rem 0;
     margin-right:20%;
     line-height: 6px;
 }

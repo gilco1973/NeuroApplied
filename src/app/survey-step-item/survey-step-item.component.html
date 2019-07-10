@@ -10,9 +10,21 @@
     <option *ngFor="let item of stepItem.items">{{item.key}}</option>
   </select>
   <div *ngFor="let subCategory of svcSurvey.selectedCategory.subs;let i = index;">
-    <select *ngIf="stepItem.itemType==='select-children'" class="txt-small-place-holder margin-bottom-5"
+    <select *ngIf="stepItem.itemType==='select-category'" class="txt-small-place-holder margin-bottom-5"
       [(ngModel)]="subCategory.selectedChild" (ngModelChange)="updateChildSelection(subCategory.selectedChild)">
       <option *ngFor="let item of subCategory.children">{{item}}</option>
+    </select>
+  </div>
+  <div *ngFor="let sub of svcSurvey.selectedBusiness.subs;let i = index;">
+    <select *ngIf="stepItem.itemType==='select-business'" class="txt-small-place-holder margin-bottom-5"
+      [(ngModel)]="sub.selectedChild" (ngModelChange)="updateChildSelection(sub.selectedChild)">
+      <option *ngFor="let item of sub.children">{{item}}</option>
+    </select>
+  </div>
+  <div *ngFor="let sub of svcSurvey.selectedResearch.subs;let i = index;">
+    <select *ngIf="stepItem.itemType==='select-research'" class="txt-small-place-holder margin-bottom-5"
+      [(ngModel)]="sub.selectedChild" (ngModelChange)="updateChildSelection(sub.selectedChild)">
+      <option *ngFor="let item of sub.children">{{item}}</option>
     </select>
   </div>
   <input id="country" *ngIf="stepItem.itemType==='country'" type="text" class="input-box txt-small-place-holder"

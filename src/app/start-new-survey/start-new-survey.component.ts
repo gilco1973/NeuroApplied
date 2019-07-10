@@ -22,7 +22,7 @@ export class StartNewSurveyComponent implements OnInit {
         placeHolder: 'The name of your new survey',
         items: ['']
       },  */{
-          itemType: 'select',
+          itemType: 'select-business',
           title: 'What is your business question?',
           placeHolder: '',
           items: this.svcSurvey.businessQuestions,
@@ -34,10 +34,10 @@ export class StartNewSurveyComponent implements OnInit {
           placeHolder: '',
           itemTypeToAdd: 'business'
         }, {
-          itemType: 'select-multi',
+          itemType: 'select-research',
           title: 'Research setup',
           placeHolder: '',
-          items: ['Finding unknown brand values', 'Compare brand perception to competitors'],
+          items: this.svcSurvey.researchSteps,
           selectedItems: this.svcSurvey.selectedResearchSetups
         }, {
           itemType: 'add',
@@ -54,7 +54,7 @@ export class StartNewSurveyComponent implements OnInit {
         placeHolder: '',
         items: this.svcSurvey.categories
       }, {
-        itemType: 'select-children',
+        itemType: 'select-category',
         title: 'Sub Category',
         placeHolder: '',
         items: this.svcSurvey.categories

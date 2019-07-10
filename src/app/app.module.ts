@@ -26,6 +26,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { TargetAudienceComponent } from './target-audience/target-audience.component';
 import { Ng5SliderModule } from 'ng5-slider';
+import { BrandComponent } from './brand/brand.component';
 
 const config = new AuthServiceConfig([
   {
@@ -58,7 +59,8 @@ export function provideConfig() {
     StartNewSurveyComponent,
     SurveyStepComponent,
     SurveyStepItemComponent,
-    TargetAudienceComponent
+    TargetAudienceComponent,
+    BrandComponent
   ],
   imports: [
     BrowserModule,

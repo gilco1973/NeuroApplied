@@ -42,6 +42,7 @@
     </div>
   </div>
   <app-target-audience *ngIf="showTargetAudience"></app-target-audience>
+  <app-brand *ngIf="stepItem.itemType==='brand'"></app-brand>
   <ng-multiselect-dropdown *ngIf="stepItem.itemType==='select-multi'" [placeholder]="''" [data]="stepItem.items"
     [(ngModel)]="stepItem.selectedItems" [settings]="dropdownSettings">
   </ng-multiselect-dropdown>

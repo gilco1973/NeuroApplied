@@ -105,3 +105,34 @@
     background: #7698ff;
   }
 }
+::ng-deep {
+  .multiselect-dropdown {
+    color: #878787;
+    font-size: 14px !important;
+    outline: none;
+    width: 290px;
+    height: 50px;
+    border-radius: 6px;
+    border: solid 1px #7698ff;
+    background-color: #fff;
+  }
+  .multiselect-dropdown .dropdown-btn {
+    border: none !important;
+    margin-top: 3%;
+  }
+  .multiselect-dropdown .dropdown-btn .dropdown-down {
+    border-top: 7px solid #8a8a8a !important;
+    border-left: 3px solid transparent !important;
+    border-right: 3px solid transparent !important;
+  }
+  .multiselect-dropdown .dropdown-btn .dropdown-up {
+    display:none !important;
+  }
+  .multiselect-item-checkbox input[type="checkbox"] + div:before {
+    border-radius: 50% !important;
+    border-color: #7698ff !important;
+  }
+  .country-select .country-list{
+    font-size:14px !important;
+  }
+}

@@ -27,13 +27,40 @@ export class TargetAudienceComponent implements OnInit {
   selectedEducations: any[] = [];
   selectedReligions: any[] = [];
   selectedIncomes: any[] = [];
-  incomes: any[] = [];
-  religions: any[] = [];
-  ethnicities: any[] = [];
-  educations: any[] = [];
+  incomes: any[] = ['Up to 25,000$',
+    '25,000$ - 50,000$',
+    '50,000$ - 75,000$',
+    '75,000$ - 100,000$',
+    '100,000$ - 150,000$',
+    '150,000$ and up'];
+  religions: any[] = ['Christian',
+    'Muslim',
+    'Jewish',
+    'Buddhist',
+    'Hinduist',
+    'Non religious'];
+  ethnicities: any[] = ['White/caucasian',
+    'Black',
+    'Asian',
+    'Latin',
+    'Native American'];
+  educations: any[] = ['Elementary school',
+    'High school',
+    'College',
+    'Graduate',
+    'Phd'];
   constructor() { }
 
   ngOnInit() {
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'id',
+      textField: 'text',
+      itemsShowLimit: 1,
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      allowSearchFilter: false
+    };
   }
   checkBoxClicked($event, item) {
     console.log(item);

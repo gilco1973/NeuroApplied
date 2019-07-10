@@ -103,6 +103,16 @@ export class StartNewSurveyComponent implements OnInit {
         items: ['For self distribution', 'Specify target audience']
       }]
     });
+    this.svcSurvey.steps.push({
+      stepNumber: 5,
+      header: 'Upload media',
+      surveyStepsItems: [{
+        itemType: 'brand',
+        title: '',
+        placeHolder: '',
+        items: ['']
+      }]
+    });
     this.svcSurvey.selectedCategory = this.svcSurvey.categories[0];
   }
 

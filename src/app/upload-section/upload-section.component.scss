@@ -1,25 +1,62 @@
 .upload-header {
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
-    color: #000000;
-    text-align: left;
-  }
-  .upload-content {
-    height: 40px;
-    font-size: 12px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    text-align: left;
-    letter-spacing: normal;
-    color: #676767;
-  }
-  .upload-btn {
-    width: 100.4px;
-    height: 45px;
-    background-color: #7698ff;
-  }
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #000000;
+  text-align: left;
+  margin-top: 14px;
+}
+.upload-content {
+  height: 40px;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  text-align: left;
+  letter-spacing: normal;
+  color: #676767;
+}
+.upload-btn {
+  font-size: 14px !important;
+  color: #ffffff !important;
+  width: 100.4px;
+  height: 45px;
+  line-height: 20px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+img {
+  max-width: 400px;
+  max-height: 400px;
+  margin: 50px;
+}
+.file-input {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  opacity: 0;
+}
+.img-delete{
+    width: 15px;
+    height: auto;
+    position: absolute;
+    right: 1.1rem;
+    top: 8rem;
+    margin: 0;
+    cursor: pointer;
+}
+.img-delete-bkg{
+    width: 37px;
+    height: 37px;
+    opacity: 0.27;
+    background-color: #cacaca;
+    position: absolute;
+    right: 0;
+    top: 7rem;
+    border-radius: 50%;
+}

@@ -1,5 +1,12 @@
-<div>
-  <div class="upload-header">Attach brand logo</div>
-  <div class="upload-content">Image size: Up to 200*200 px<br/>Format: Jpeg. Png. Eps.Svg</div>
-    <a (click)="upload()" class="btn btn-blue">Upload</a>
+<div style="position: relative;">
+  <div *ngIf="!isCompeting" class="upload-header">Attach brand logo</div>
+  <div *ngIf="isCompeting" class="upload-header">Attach Competing<br>brand's logo</div>
+  <div style="display: flex">
+    <div class="upload-content">Image size: Up to 400*400 px<br />Format: Jpeg. Png. Eps.Svg</div>
+    <a (click)="upload()" class="btn-blue upload-btn">Upload</a>
+    <input class="file-input" type='file' (change)="readURL($event);" />
+  </div>
+  <img src={{path}}/>
+  <span *ngIf="path" class="img-delete-bkg"></span>
+  <img *ngIf="path" class="img-delete" src="../../assets/delete.svg" (click)="path=null;"/>
 </div>

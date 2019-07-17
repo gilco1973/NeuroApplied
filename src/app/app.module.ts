@@ -27,6 +27,8 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { TargetAudienceComponent } from './target-audience/target-audience.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { BrandComponent } from './brand/brand.component';
+import { ScreenComponent } from './screen/screen.component';
+import { UploadSectionComponent } from './upload-section/upload-section.component';
 
 const config = new AuthServiceConfig([
   {
@@ -60,7 +62,9 @@ export function provideConfig() {
     SurveyStepComponent,
     SurveyStepItemComponent,
     TargetAudienceComponent,
-    BrandComponent
+    BrandComponent,
+    ScreenComponent,
+    UploadSectionComponent
   ],
   imports: [
     BrowserModule,

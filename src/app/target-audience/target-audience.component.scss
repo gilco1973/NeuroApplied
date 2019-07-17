@@ -1,54 +1,46 @@
-.line {
-    width: 290px;
-    height: 1px;
-    opacity: 0.48;
-    border: solid 1px #979797;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  img{
-    width:19.6px;
-    height:34.6px;
-    margin-left: 10px;
-  }
-  .gender-container{
-      display: inline-flex;
-      width: 80%;
-      margin: 0;
-      margin-right:20%;
-  }
-  .age-container{
-    display: inline-flex;
-    width: 80%;
-    margin: 1rem 0;
-    margin-right:20%;
-    line-height: 6px;
+img {
+  width: 19.6px;
+  height: 34.6px;
+  margin-left: 10px;
 }
-  .children{
-    margin-left: 20px;
-    padding-left: 20px;
-  }
-  .age-view {
-    width: 81px;
-    height: 26px;
-    border-radius: 13px;
-    background-color: #7698ff;
-    margin: auto;
-    color: white;
-    font-size: 14px;
-    line-height: 28px;
-  }
-  .checkmark {
-    position: absolute;
-    top: 10px;
-    left: 3px;
-    width: 15px;
-    height: 15px;
-    border: solid 1px #979797;
-    border-radius: 50%;
-    background-color: transparent;
-  }
-  // We need to use ::ng-deep to overcome view encapsulation
+.gender-container {
+  display: inline-flex;
+  width: 80%;
+  margin: 0;
+  margin-right: 20%;
+}
+.age-container {
+  display: inline-flex;
+  width: 80%;
+  margin: 1rem 0;
+  margin-right: 20%;
+  line-height: 6px;
+}
+.children {
+  margin-left: 20px;
+  padding-left: 20px;
+}
+.age-view {
+  width: 81px;
+  height: 26px;
+  border-radius: 13px;
+  background-color: #7698ff;
+  margin: auto;
+  color: white;
+  font-size: 14px;
+  line-height: 28px;
+}
+.checkmark {
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  border: solid 1px #979797;
+  border-radius: 50%;
+  background-color: transparent;
+}
+// We need to use ::ng-deep to overcome view encapsulation
 ::ng-deep {
   .custom-slider .ng5-slider .ng5-slider-bar {
     background: #7698ff;
@@ -91,7 +83,7 @@
     width: 80% !important;
     height: 32px;
     z-index: 1;
-}
+  }
   .custom-slider .ng5-slider .ng5-slider-tick {
     width: 1px;
     height: 10px;
@@ -126,13 +118,13 @@
     border-right: 3px solid transparent !important;
   }
   .multiselect-dropdown .dropdown-btn .dropdown-up {
-    display:none !important;
+    display: none !important;
   }
   .multiselect-item-checkbox input[type="checkbox"] + div:before {
     border-radius: 50% !important;
     border-color: #7698ff !important;
   }
-  .country-select .country-list{
-    font-size:14px !important;
+  .country-select .country-list {
+    font-size: 14px !important;
   }
 }

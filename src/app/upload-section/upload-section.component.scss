@@ -41,22 +41,59 @@ img {
   width: 100px;
   opacity: 0;
 }
-.img-delete{
-    width: 15px;
-    height: auto;
-    position: absolute;
-    right: 1.1rem;
-    top: 8rem;
-    margin: 0;
-    cursor: pointer;
+.img-delete {
+  width: 15px;
+  height: auto;
+  position: absolute;
+  right: 1.1rem;
+  top: 7.8rem;
+  margin: 0;
+  cursor: pointer;
 }
-.img-delete-bkg{
-    width: 37px;
-    height: 37px;
-    opacity: 0.27;
-    background-color: #cacaca;
-    position: absolute;
-    right: 0;
-    top: 7rem;
-    border-radius: 50%;
+.img-delete-bkg {
+  width: 37px;
+  height: 37px;
+  opacity: 0.27;
+  background-color: #cacaca;
+  position: absolute;
+  right: 0;
+  top: 7rem;
+  border-radius: 50%;
 }
+.color-btn-holder{
+    display:flex;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    justify-content: space-evenly;
+    flex-basis: auto;
+}
+.color-btn {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  &:hover,
+  &:focus{
+    border: solid 1px #979797;
+    transform: scale(1.1);
+  }
+}
+.color-btn-red{
+    background: #f14f4f
+}
+.color-btn-orange{
+    background-color: #f1a54f;
+}
+.color-btn-yellow{
+    background-color: #f9e721;
+}
+.color-btn-green{
+    background-color: #27de2d;
+}
+.color-btn-blue{
+    background-color: #5c91ff;
+}
+.color-btn-purple{
+    background-color: #af3fd9;
+}
+

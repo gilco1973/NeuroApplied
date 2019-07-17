@@ -6,7 +6,20 @@
     <a (click)="upload()" class="btn-blue upload-btn">Upload</a>
     <input class="file-input" type='file' (change)="readURL($event);" />
   </div>
-  <img src={{path}}/>
+  <img *ngIf="path" src={{path}} />
   <span *ngIf="path" class="img-delete-bkg"></span>
-  <img *ngIf="path" class="img-delete" src="../../assets/delete.svg" (click)="path=null;"/>
+  <img *ngIf="path" class="img-delete" src="../../assets/delete.svg" (click)="path=null;" />
 </div>
+<div class="upload-header">Select color defining segment</div>
+<div style="display: flex">
+  <div class="upload-content">Color will represent your brand’s chart in the<br>survey results</div>
+</div>
+<div class="color-btn-holder">
+  <div class="color-btn color-btn-red"></div>
+  <div class="color-btn color-btn-orange"></div>
+  <div class="color-btn color-btn-yellow"></div>
+  <div class="color-btn color-btn-green"></div>
+  <div class="color-btn color-btn-blue"></div>
+  <div class="color-btn color-btn-purple"></div>
+</div>
+<div class="line"></div>

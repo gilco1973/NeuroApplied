@@ -1,10 +1,11 @@
 import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { User } from '../User';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { SocialLogin } from '../common/social-login.enum';
 declare var gapi: any;
+declare var FB: any;
 
 @Component({
   selector: 'app-login',
@@ -18,11 +19,30 @@ export class LoginComponent implements OnInit, AfterViewInit {
   password: any;
   email: any;
   @Input() isRegister;
-  constructor(private activeRoute: ActivatedRoute, private svcApi: ApiService, private http: HttpClient) {
+  constructor(private activeRoute: ActivatedRoute, private svcApi: ApiService, private router: Router) {
 
   }
 
   ngOnInit() {
+    (window as any).fbAsyncInit = function () {
+      FB.init({
+        appId: '373670939957437',
+        cookie: true,
+        xfbml: true,
+        version: 'v3.3'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
     this.activeRoute.queryParams.subscribe(params => {
       const social = <string>params['state'];
       this.code = <string>params['code'];
@@ -33,15 +53,29 @@ export class LoginComponent implements OnInit, AfterViewInit {
     });
   }
   loginWithSocial(social: string) {
-    this.svcApi.loginWithSocial(social, this.code).then((res: any) => {
-        console.log(res);
+    if (social === 'Facebook') {
+      FB.login((res: any) => {
+        if (res.authResponse) {
+          this.navigateToIntro(res);
+        } else {
+          console.log('Facebook login failed', res);
+        }
       });
+    } else {
+      this.svcApi.loginWithSocial(social, this.code).then((res: any) => {
+        this.navigateToIntro(res);
+      });
+    }
+  }
+  navigateToIntro(res: any) {
+    console.log(res);
+    this.router.navigateByUrl('/intro');
   }
   ngAfterViewInit() {
   }
   loginWithPassword() {
     this.svcApi.loginWithPassword(this.email, this.password).then((res: any) => {
-      console.log(res);
+      this.navigateToIntro(res);
     });
   }
 

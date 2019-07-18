@@ -46,38 +46,42 @@ function verifyCredentials(user, password, callback) {
 
 function loginUser(email, password, checkPassword = true, callback) {
   Users.findOne({
-        email: email
-      }, function (err, user) {
+    email: email
+  }, function (err, user) {
+    if (err) {
+      return callback(err);
+    } else if (user) {
+      if (!checkPassword) {
+        return callback(null, user);
+      }
+      verifyCredentials(user, password, function (err) {
         if (err) {
           return callback(err);
-        } else if (user) {
-            if(!checkPassword){
-                return callback(null, user);
-            }
-          verifyCredentials(user, password, function (err) {
-              if (err) {
-                return callback(err);
-              }
-              return callback(null, user);
-            });
-            } else {
-              const newUser = new Users();
-              const data = {
-                email: email,
-                password: password
-              };
-              setUser(newUser, data, function (err, user) {
-                if (err) {
-                  console.log('User Creation Error ' + err);
-                  var err = new Error('User Creation Error ' + err);
-                  return callback(err);
-                }
+        }
+        return callback(null, user);
+      });
+    } else if (checkPassword && !user) { //login with user and password fail-no such user
+      var err = new Error('User does not exist ');
+      return callback(err);
 
-                console.log('User Creation Success');
-                return callback(null, user);
-              })
-            }
-          })
-      }
+    } else {
+      const newUser = new Users();
+      const data = {
+        email: email,
+        password: password
+      };
+      setUser(newUser, data, function (err, user) {
+        if (err) {
+          console.log('User Creation Error ' + err);
+          var err = new Error('User Creation Error ' + err);
+          return callback(err);
+        }
 
-      module.exports = loginUser;
+        console.log('User Creation Success');
+        return callback(null, user);
+      })
+    }
+  })
+}
+
+module.exports = loginUser;

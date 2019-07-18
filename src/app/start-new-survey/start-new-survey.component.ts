@@ -17,30 +17,30 @@ export class StartNewSurveyComponent implements OnInit {
   ngOnInit() {
     this.svcSurvey.steps.push({
       stepNumber: 1, surveyStepsItems: [{
-          itemType: 'select-business',
-          title: 'What is your business question?',
-          placeHolder: '',
-          items: this.svcSurvey.businessQuestions,
-          selectedItems: this.svcSurvey.selectedBusinessQuestions
-        }, {
-          itemType: 'add',
-          title: '',
-          addTitle: '*Add a business question',
-          placeHolder: '',
-          itemTypeToAdd: 'business'
-        }, {
-          itemType: 'select-research',
-          title: 'Research setup',
-          placeHolder: '',
-          items: this.svcSurvey.researchSteps,
-          selectedItems: this.svcSurvey.selectedResearchSetups
-        }, {
-          itemType: 'add',
-          title: '',
-          addTitle: '*Add a research setup',
-          placeHolder: '',
-          itemTypeToAdd: 'research'
-        }]
+        itemType: 'select-business',
+        title: 'What is your business question?',
+        placeHolder: '',
+        items: this.svcSurvey.businessQuestions,
+        selectedItems: this.svcSurvey.selectedBusinessQuestions
+      }, {
+        itemType: 'add',
+        title: '',
+        addTitle: '*Add a business question',
+        placeHolder: '',
+        itemTypeToAdd: 'business'
+      }, {
+        itemType: 'select-research',
+        title: 'Research setup',
+        placeHolder: '',
+        items: this.svcSurvey.researchSteps,
+        selectedItems: this.svcSurvey.selectedResearchSetups
+      }, {
+        itemType: 'add',
+        title: '',
+        addTitle: '*Add a research setup',
+        placeHolder: '',
+        itemTypeToAdd: 'research'
+      }]
     });
     this.svcSurvey.steps.push({
       stepNumber: 2, surveyStepsItems: [{
@@ -120,7 +120,7 @@ export class StartNewSurveyComponent implements OnInit {
     });
     this.svcSurvey.selectedCategory = this.svcSurvey.categories[0];
   }
-  createSurvey(){
-    
+  createSurvey() {
+
   }
 }

@@ -9,6 +9,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CreateGameIntroComponent } from './create-game-intro/create-game-intro.component';
 import { GetCurrentUserResolver } from './get-current-user.resolver';
 import { StartNewSurveyComponent } from './start-new-survey/start-new-survey.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PurchaseCompletedComponent } from './purchase-completed/purchase-completed.component';
 
 
 
@@ -41,6 +43,16 @@ const routes: Routes = [
   {
     path: 'new-survey',
     component: StartNewSurveyComponent,
+  //  resolve: { currentUser: GetCurrentUserResolver}
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+  //  resolve: { currentUser: GetCurrentUserResolver}
+  },
+  {
+    path: 'completed',
+    component: PurchaseCompletedComponent,
   //  resolve: { currentUser: GetCurrentUserResolver}
   },
   {

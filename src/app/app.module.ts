@@ -30,6 +30,8 @@ import { BrandComponent } from './brand/brand.component';
 import { ScreenComponent } from './screen/screen.component';
 import { UploadSectionComponent } from './upload-section/upload-section.component';
 import { MsalModule } from '@azure/msal-angular';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PurchaseCompletedComponent } from './purchase-completed/purchase-completed.component';
 
 const config = new AuthServiceConfig([
   {
@@ -65,12 +67,14 @@ export function provideConfig() {
     TargetAudienceComponent,
     BrandComponent,
     ScreenComponent,
-    UploadSectionComponent
+    UploadSectionComponent,
+    CheckoutComponent,
+    PurchaseCompletedComponent
   ],
   imports: [
     BrowserModule,
     MsalModule.forRoot({
-      clientID: "c2b01489-73c3-43a6-bcb3-4e11dadb2901"
+      clientID: 'c2b01489-73c3-43a6-bcb3-4e11dadb2901' // Microsoft App Id
   }),
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,

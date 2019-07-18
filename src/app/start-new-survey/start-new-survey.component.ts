@@ -16,12 +16,7 @@ export class StartNewSurveyComponent implements OnInit {
 
   ngOnInit() {
     this.svcSurvey.steps.push({
-      stepNumber: 1, surveyStepsItems: [/* {
-        itemType: 'input',
-        title: 'Survey Name',
-        placeHolder: 'The name of your new survey',
-        items: ['']
-      },  */{
+      stepNumber: 1, surveyStepsItems: [{
           itemType: 'select-business',
           title: 'What is your business question?',
           placeHolder: '',
@@ -113,7 +108,19 @@ export class StartNewSurveyComponent implements OnInit {
         items: ['']
       }]
     });
+    this.svcSurvey.steps.push({
+      stepNumber: 6,
+      header: 'Survey name',
+      surveyStepsItems: [{
+        itemType: 'input',
+        title: '',
+        placeHolder: 'The name of your survey',
+        items: ['']
+      }]
+    });
     this.svcSurvey.selectedCategory = this.svcSurvey.categories[0];
   }
-
+  createSurvey(){
+    
+  }
 }

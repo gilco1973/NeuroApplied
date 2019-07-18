@@ -1,9 +1,11 @@
-import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, Input } from '@angular/core';
 import { User } from '../User';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { SocialLogin } from '../common/social-login.enum';
+import { BroadcastService, MsalService } from '@azure/msal-angular';
+import { Subscription } from 'rxjs/Subscription';
 declare var gapi: any;
 declare var FB: any;
 
@@ -13,17 +15,23 @@ declare var FB: any;
   styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent implements OnInit, AfterViewInit {
+export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
   hostUrl = 'http://localhost:4200';
   code: string;
   password: any;
   email: any;
+  public userInfo: any = null;
+  private subscription: Subscription;
+  public isIframe: boolean;
   @Input() isRegister;
-  constructor(private activeRoute: ActivatedRoute, private svcApi: ApiService, private router: Router) {
-
+  constructor(private activeRoute: ActivatedRoute, private svcApi: ApiService, private router: Router,
+    private broadcastService: BroadcastService, private authService: MsalService) {
+    //  This is to avoid reload during acquireTokenSilent() because of hidden iframe
+    this.isIframe = window !== window.parent && !window.opener;
   }
 
   ngOnInit() {
+    // Facebook
     (window as any).fbAsyncInit = function () {
       FB.init({
         appId: '373670939957437',
@@ -35,10 +43,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
     };
 
     (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
+      let js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) { return; }
       js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      js.src = 'https://connect.facebook.net/en_US/sdk.js';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
@@ -51,9 +59,24 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
       }
     });
+    // Microsoft
+    this.broadcastService.subscribe('msal:loginFailure', (payload) => {
+      console.log('Microsoft login failure ' + JSON.stringify(payload));
+    });
+
+    this.broadcastService.subscribe('msal:loginSuccess', (payload) => {
+      this.navigateToIntro('Microsoft login success' + JSON.stringify(payload));
+    });
   }
+
   loginWithSocial(social: string) {
-    if (social === 'Facebook') {
+    if (social === 'Microsoft') {
+      if (this.authService.getUser()) {
+        this.navigateToIntro('Microsoft user logged In already');
+        return;
+      }
+      this.authService.loginPopup(['user.read' , 'api://c2b01489-73c3-43a6-bcb3-4e11dadb2901/user.read']);
+    } else if (social === 'Facebook') {
       FB.login((res: any) => {
         if (res.authResponse) {
           this.navigateToIntro(res);
@@ -67,6 +90,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
       });
     }
   }
+  ngOnDestroy() {
+    this.broadcastService.getMSALSubject().next(1);
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
   navigateToIntro(res: any) {
     console.log(res);
     this.router.navigateByUrl('/intro');
@@ -78,27 +107,5 @@ export class LoginComponent implements OnInit, AfterViewInit {
       this.navigateToIntro(res);
     });
   }
-
-
-  // signInWithGoogle() {
-  //   gapi.load('auth2', () => {
-  //     gapi.auth2.init();
-  //     const googleAuth = gapi.auth2.getAuthInstance();
-  //     googleAuth.then(() => {
-  //       googleAuth.signIn({ scope: 'profile email' }).then(googleUser => {
-  //         this.code = googleUser.getAuthResponse().id_token;
-  //         this.loginWithSocial('google');
-  //         /* const profile = googleUser.getBasicProfile();
-  //         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  //         console.log('ID Token: ' + id_token);
-  //         console.log('Name: ' + profile.getName());
-  //         console.log('Image URL: ' + profile.getImageUrl());
-  //         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present. */
-
-  //       });
-
-  //     });
-  //   });
-  // }
 }
 

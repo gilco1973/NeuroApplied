@@ -29,6 +29,7 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { BrandComponent } from './brand/brand.component';
 import { ScreenComponent } from './screen/screen.component';
 import { UploadSectionComponent } from './upload-section/upload-section.component';
+import { MsalModule } from '@azure/msal-angular';
 
 const config = new AuthServiceConfig([
   {
@@ -68,6 +69,9 @@ export function provideConfig() {
   ],
   imports: [
     BrowserModule,
+    MsalModule.forRoot({
+      clientID: "c2b01489-73c3-43a6-bcb3-4e11dadb2901"
+  }),
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     MatSnackBarModule,

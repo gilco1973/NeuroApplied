@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SocialLogin } from './common/social-login.enum';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,11 @@ export class ApiService {
   }
   getCurrentUser(): Promise<any> {
     return this.http.get('/getCurrentUser', { withCredentials: true }).toPromise();
+  }
+  public httpGetRequest(url : string) {
+    return this.http.get(url)
+      .map(response => {
+        return response;
+      });
   }
 }

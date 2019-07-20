@@ -17,7 +17,7 @@ export class CheckoutComponent implements OnInit {
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: '0.01'
+              value: '800'
             }
           }]
         });

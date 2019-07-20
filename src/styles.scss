@@ -74,6 +74,7 @@ img {
   letter-spacing: -0.1px;
   text-align: center;
   color: #000000;
+  text-transform: uppercase;
 }
 .txt-small {
   outline: none;
@@ -132,10 +133,15 @@ select,
   text-transform: none;
 }
 .txt-font14-black {
-  color: #000;
+  color: #000 !important;
+  font-size: 14px !important;
 }
 .txt-font14-white {
   color: #ffffff;
+}
+.txt-font18-black {
+  color: #000 !important;
+  font-size: 14px !important;
 }
 .add-sub {
   display: inline-block;

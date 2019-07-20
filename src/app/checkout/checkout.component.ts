@@ -24,9 +24,9 @@ export class CheckoutComponent implements OnInit {
       },
       onApprove: (data, actions) => {
         // Capture the funds from the transaction
-        return actions.order.capture().then(function (details) {
+        return actions.order.capture().then((details: any) => {
           // Show a success message to your buyer
-          this.router.navigate('/completed?name=' + details.payer.name.given_name);
+          this.router.navigateByUrl('/completed?name=' + details.payer.name.given_name);
         });
       }
     }).render('#paypal-button-container');

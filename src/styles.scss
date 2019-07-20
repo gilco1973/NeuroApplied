@@ -191,7 +191,17 @@ select,
 .checkbox{
   text-align: left;
 }
-.container {
+.checkmark {
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  border: solid 1px #979797;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.checkbox-container {
   display: block;
   position: relative;
   padding-left: 20px;
@@ -206,7 +216,7 @@ select,
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.checkbox-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -227,8 +237,7 @@ select,
 }
 
 /* On mouse-over, or checked, display checked image */
-.container input:checked ~ .checkmark,
-.container:hover input ~ .checkmark {
+.checkbox-container input:checked ~ .checkmark{
   background-image: url('./assets/rounded-checkbox.svg');
   border: none;
 }

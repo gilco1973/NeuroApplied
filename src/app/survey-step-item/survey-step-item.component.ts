@@ -17,6 +17,7 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
     selectAllText: string; unSelectAllText: string; allowSearchFilter: boolean;
   };
   showTargetAudience: boolean;
+  isForSelfDistribution : boolean;
   constructor(private svcSurvey: SurveyService) {
 
   }

@@ -34,11 +34,17 @@
     <span class="txt-font14 txt-font14-black">{{stepItem.addTitle}}</span>
   </div>
   <div *ngIf="stepItem.itemType==='cbGroup'" name="targetAudience">
-    <div class="checkbox container txt-font14-black"  *ngFor="let item of stepItem.items">
-      <input type="checkbox" class="checkbox" (click)="checkBoxClicked($event,item)"
-          [value]="item">
-        {{item}}
-        <span (click)="checkBoxClicked($event,item)" class="checkmark"></span>
+      <div class="checkbox checkbox-container txt-font14-black">
+          <input type="checkbox" class="checkbox"
+              [(ngModel)]="isForSelfDistribution">
+            For self distribution
+            <span (click)="isForSelfDistribution = !isForSelfDistribution" class="checkmark"></span>
+        </div>
+    <div class="checkbox checkbox-container txt-font14-black">
+      <input type="checkbox" class="checkbox"
+          [(ngModel)]="showTargetAudience">
+        Specify target audience
+        <span (click)="showTargetAudience = !showTargetAudience" class="checkmark"></span>
     </div>
   </div>
   <app-target-audience *ngIf="showTargetAudience"></app-target-audience>

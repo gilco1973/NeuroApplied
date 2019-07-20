@@ -1,21 +1,14 @@
 <div class="line"></div>
 <div class="gender-container">
   <span class="txt-small">Gender</span>
-
-  <span class="checkbox container txt-font14-black children">
-    <input type="checkbox" class="checkbox" (click)="checkBoxClicked($event,item)" [value]="item">
-    {{item}}
-    <span (click)="checkBoxClicked($event,item)" class="checkmark">
-
-    </span>
+  <span class="checkbox checkbox-container txt-font14-black children">
+    <input type="checkbox" class="checkbox" [(ngModel)]="boySelected">
+    <span (click)="boySelected = !boySelected" class="checkmark"></span>
     <img src="../../assets/boy.svg">
   </span>
-  <span class="checkbox container txt-font14-black children">
-    <input type="checkbox" class="checkbox" (click)="checkBoxClicked($event,item)" [value]="item">
-    {{item}}
-    <span (click)="checkBoxClicked($event,item)" class="checkmark">
-
-    </span>
+  <span class="checkbox checkbox-container txt-font14-black children">
+    <input type="checkbox" class="checkbox" [(ngModel)]="girlSelected">
+    <span (click)="girlSelected = !girlSelected" class="checkmark"></span>
     <img src="../../assets/girl.svg">
   </span>
 </div>

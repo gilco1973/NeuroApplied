@@ -7,7 +7,8 @@ import { Options } from 'ng5-slider';
   styleUrls: ['./target-audience.component.scss']
 })
 export class TargetAudienceComponent implements OnInit {
-
+  boySelected = false;
+  girlSelected = false;
   value: number = 25;
   highValue: number = 65;
   options: Options = {

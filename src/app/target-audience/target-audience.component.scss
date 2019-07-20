@@ -30,16 +30,6 @@ img {
   font-size: 14px;
   line-height: 28px;
 }
-.checkmark {
-  position: absolute;
-  top: 10px;
-  left: 3px;
-  width: 15px;
-  height: 15px;
-  border: solid 1px #979797;
-  border-radius: 50%;
-  background-color: transparent;
-}
 // We need to use ::ng-deep to overcome view encapsulation
 ::ng-deep {
   .custom-slider .ng5-slider .ng5-slider-bar {

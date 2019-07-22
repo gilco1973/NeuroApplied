@@ -1,0 +1,14 @@
+<div class="summary">
+  <div class="txt-caps" style="text-transform: none;font-size: 18px;">Survey Summary</div>
+  <div class="skip">
+    <a href="\checkout" style="font-size: 14px;">Skip to payment</a>
+  </div>
+  <div class="step" *ngFor="let step of steps">
+    <div class="step-title">Step {{step.stepNumber}}</div>
+    <div class="step-header">
+      <span class="txt-small">{{step.header}}</span>
+      <span><a>Edit</a></span>
+      <div>{{step.title}}</div>
+    </div>
+  </div>
+</div>

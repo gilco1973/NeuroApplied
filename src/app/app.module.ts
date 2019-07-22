@@ -32,6 +32,8 @@ import { UploadSectionComponent } from './upload-section/upload-section.componen
 import { MsalModule } from '@azure/msal-angular';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PurchaseCompletedComponent } from './purchase-completed/purchase-completed.component';
+import { SurveySummaryComponent } from './survey-summary/survey-summary.component';
+import { SurveyService } from './survey.service';
 
 const config = new AuthServiceConfig([
   {
@@ -69,7 +71,8 @@ export function provideConfig() {
     ScreenComponent,
     UploadSectionComponent,
     CheckoutComponent,
-    PurchaseCompletedComponent
+    PurchaseCompletedComponent,
+    SurveySummaryComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +102,8 @@ export function provideConfig() {
       useFactory: provideConfig
     },
     MDBModalRef,
-    GetCurrentUserResolver
+    GetCurrentUserResolver,
+    SurveyService
   ],
   bootstrap: [AppComponent]
 })

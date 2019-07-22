@@ -109,6 +109,7 @@ export class SurveyService {
       }],
       attributes: this.attributes
     }];
+  selectedRegion: any[];
 
 
   updateCategoryObject(selectedCategoryHeader) {
@@ -121,6 +122,110 @@ export class SurveyService {
     this.selectedCategory = this.categories[0];
     this.selectedBusiness = this.businessQuestions[0];
     this.selectedResearch = this.researchSteps[0];
+    this.steps.push({
+      stepNumber: 1, surveyStepsItems: [{
+        itemType: 'select-business',
+        title: 'What is your business question?',
+        placeHolder: '',
+        items: this.businessQuestions,
+        selectedItems: this.selectedBusinessQuestions
+      }, {
+        itemType: 'add',
+        title: '',
+        addTitle: '*Add a business question',
+        placeHolder: '',
+        itemTypeToAdd: 'business'
+      }, {
+        itemType: 'select-research',
+        title: 'Research setup',
+        placeHolder: '',
+        items: this.researchSteps,
+        selectedItems: this.selectedResearchSetups
+      }, {
+        itemType: 'add',
+        title: '',
+        addTitle: '*Add a research setup',
+        placeHolder: '',
+        itemTypeToAdd: 'research'
+      }]
+    });
+    this.steps.push({
+      stepNumber: 2, surveyStepsItems: [{
+        itemType: 'select-parents',
+        title: 'Category',
+        placeHolder: '',
+        items: this.categories
+      }, {
+        itemType: 'select-category',
+        title: 'Sub Category',
+        placeHolder: '',
+        items: this.categories
+      }, {
+        itemType: 'add',
+        title: '',
+        addTitle: '*Add a sub category',
+        placeHolder: '',
+        itemTypeToAdd: 'category'
+      }, {
+        itemType: 'select-multi',
+        title: 'Attributes',
+        placeHolder: '',
+        items: this.selectedCategory.attributes
+      }, {
+        itemType: 'input',
+        title: '*Add attributes (Add values not in list)',
+        placeHolder: 'Write here',
+      }]
+    });
+    this.steps.push({
+      stepNumber: 3, surveyStepsItems: [{
+        itemType: 'input',
+        title: 'Survey Name',
+        placeHolder: 'The name of your new survey',
+        items: ['']
+      }, {
+        itemType: 'country',
+        title: 'Survey Location (country)',
+        placeHolder: ''
+      }, {
+        itemType: 'select',
+        title: 'Region',
+        placeHolder: '',
+        items: ['All', 'North', 'South', 'East', 'West', 'Central'],
+        selectedItems: this.selectedRegion
+      }]
+    });
+    this.steps.push({
+      stepNumber: 4,
+      header: 'Define target audience',
+      surveyStepsItems: [{
+        itemType: 'cbGroup',
+        title: '',
+        placeHolder: '',
+        items: ['For self distribution', 'Specify target audience']
+      }]
+    });
+    this.steps.push({
+      stepNumber: 5,
+      header: 'Upload media',
+      surveyStepsItems: [{
+        itemType: 'brand',
+        title: '',
+        placeHolder: '',
+        items: ['']
+      }]
+    });
+    this.steps.push({
+      stepNumber: 6,
+      header: 'Survey name',
+      surveyStepsItems: [{
+        itemType: 'input',
+        title: '',
+        placeHolder: 'The name of your survey',
+        items: ['']
+      }]
+    });
+    this.selectedCategory = this.categories[0];
   }
   addSubItem(itemToAdd: string) {
     const subItem = new SubItem();

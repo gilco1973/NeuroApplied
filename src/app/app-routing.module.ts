@@ -11,6 +11,7 @@ import { GetCurrentUserResolver } from './get-current-user.resolver';
 import { StartNewSurveyComponent } from './start-new-survey/start-new-survey.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PurchaseCompletedComponent } from './purchase-completed/purchase-completed.component';
+import { SurveySummaryComponent } from './survey-summary/survey-summary.component';
 
 
 
@@ -48,6 +49,11 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+  //  resolve: { currentUser: GetCurrentUserResolver}
+  },
+  {
+    path: 'summary',
+    component: SurveySummaryComponent,
   //  resolve: { currentUser: GetCurrentUserResolver}
   },
   {

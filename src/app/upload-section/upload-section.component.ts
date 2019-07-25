@@ -33,13 +33,5 @@ export class UploadSectionComponent implements OnInit {
   }
   colorSelected(index, color) {
     this.setBrandColor.emit(color);
-    console.log(index);
-    $('#red').removeClass('selected-color');
-    $('#green').removeClass('selected-color');
-    $('#blue').removeClass('selected-color');
-    $('#yellow').removeClass('selected-color');
-    $('#orange').removeClass('selected-color');
-    $('#purple').removeClass('selected-color');
-    $('#' + color).addClass('selected-color');
   }
 }

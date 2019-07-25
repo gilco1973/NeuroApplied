@@ -16,7 +16,7 @@
 </div>
 <div class="color-btn-holder">
   <div *ngFor="let color of colors;let i = index">
-    <label class="pure-material-radio" [ngClass]="color == 'red' ? 'color-btn-red' : 'color-btn-green'">
+    <label class="pure-material-radio">
       <input type="radio" name="group" (click)="colorSelected(i, color)">
       <span [ngClass]="color == 'red' ? 'color-btn-red' : 'color-btn-'+color"></span>
     </label>

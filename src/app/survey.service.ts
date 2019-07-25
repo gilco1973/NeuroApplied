@@ -15,6 +15,7 @@ export class SurveyStepItem {
   itemTypeToAdd?: string;
   info?: string;
   isEditing: boolean;
+  tooltip?: string;
 }
 export class Category {
   key: string;
@@ -137,7 +138,10 @@ export class SurveyService {
         addTitle: '*Add a business question',
         placeHolder: '',
         itemTypeToAdd: 'business',
-        isEditing: true
+        isEditing: true,
+        tooltip: `No problem, you may add any business question which isn’t include in our list.
+        Just write it over here and our team will get in touch with you in 2 business days.
+        Keep notice an question not apear over the above may effect the final price`
       }, {
         itemType: 'select-research',
         title: 'Research setup',

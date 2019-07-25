@@ -268,3 +268,27 @@ select,
   text-align: center;
   color: #676767;
 }
+.popover {
+  width: 329px;
+  height: 149px;
+  box-shadow: 0 2px 4px 0 #7698ff;
+  background-color: #7698ff;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff !important;
+}
+.popover-body{
+  color: #ffffff !important;
+  line-height: 1.5 !important;
+}
+.info{
+  background-image: url('./assets/info.svg');
+  width:16px;
+  height:16px;
+  background-repeat: no-repeat;
+  
+}

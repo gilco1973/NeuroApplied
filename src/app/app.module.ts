@@ -34,6 +34,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PurchaseCompletedComponent } from './purchase-completed/purchase-completed.component';
 import { SurveySummaryComponent } from './survey-summary/survey-summary.component';
 import { SurveyService } from './survey.service';
+import { NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 
 const config = new AuthServiceConfig([
   {
@@ -89,7 +90,8 @@ export function provideConfig() {
     BrowserAnimationsModule,
     FormsModule,
     MatRadioModule,
-    Ng5SliderModule
+    Ng5SliderModule,
+    NgbPopoverModule
   ],
   providers: [
     {

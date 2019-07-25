@@ -13,6 +13,12 @@ export class SurveySummaryComponent implements OnInit {
 
   ngOnInit() {
     this.steps = this.svcSurvey.steps;
+    this.steps.forEach(step => {
+      step.surveyStepsItems.forEach(stepItem =>{
+        stepItem.isEditing = false;
+      });
+      
+    });
   }
 
 }

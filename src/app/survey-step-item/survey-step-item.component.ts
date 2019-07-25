@@ -8,6 +8,7 @@ import { SurveyService, SurveyStepItem } from '../survey.service';
 })
 export class SurveyStepItemComponent implements OnInit, AfterViewInit {
   @Input() stepItem: SurveyStepItem;
+  @Input() isSummaryMode = false;
   selection;
   selectedChild;
   parent;
@@ -52,6 +53,7 @@ export class SurveyStepItemComponent implements OnInit, AfterViewInit {
       unSelectAllText: 'UnSelect All',
       allowSearchFilter: false
     };
+    //this.stepItem.isEditing = false;
   }
   updateChildren() {
     if (this.selectedCategoryHeader) {

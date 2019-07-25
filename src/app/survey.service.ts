@@ -14,6 +14,7 @@ export class SurveyStepItem {
   addTitle?: string;
   itemTypeToAdd?: string;
   info?: string;
+  isEditing: boolean;
 }
 export class Category {
   key: string;
@@ -128,25 +129,29 @@ export class SurveyService {
         title: 'What is your business question?',
         placeHolder: '',
         items: this.businessQuestions,
-        selectedItems: this.selectedBusinessQuestions
+        selectedItems: this.selectedBusinessQuestions,
+        isEditing: true
       }, {
         itemType: 'add',
         title: '',
         addTitle: '*Add a business question',
         placeHolder: '',
-        itemTypeToAdd: 'business'
+        itemTypeToAdd: 'business',
+        isEditing: true
       }, {
         itemType: 'select-research',
         title: 'Research setup',
         placeHolder: '',
         items: this.researchSteps,
-        selectedItems: this.selectedResearchSetups
+        selectedItems: this.selectedResearchSetups,
+        isEditing: true
       }, {
         itemType: 'add',
         title: '',
         addTitle: '*Add a research setup',
         placeHolder: '',
-        itemTypeToAdd: 'research'
+        itemTypeToAdd: 'research',
+        isEditing: true
       }]
     });
     this.steps.push({
@@ -154,45 +159,47 @@ export class SurveyService {
         itemType: 'select-parents',
         title: 'Category',
         placeHolder: '',
-        items: this.categories
+        items: this.categories,
+        isEditing: true
       }, {
         itemType: 'select-category',
         title: 'Sub Category',
         placeHolder: '',
-        items: this.categories
+        items: this.categories,
+        isEditing: true
       }, {
         itemType: 'add',
         title: '',
         addTitle: '*Add a sub category',
         placeHolder: '',
-        itemTypeToAdd: 'category'
+        itemTypeToAdd: 'category',
+        isEditing: true
       }, {
         itemType: 'select-multi',
         title: 'Attributes',
         placeHolder: '',
-        items: this.selectedCategory.attributes
+        items: this.selectedCategory.attributes,
+        isEditing: true
       }, {
         itemType: 'input',
         title: '*Add attributes (Add values not in list)',
         placeHolder: 'Write here',
+        isEditing: true
       }]
     });
     this.steps.push({
       stepNumber: 3, surveyStepsItems: [{
-        itemType: 'input',
-        title: 'Survey Name',
-        placeHolder: 'The name of your new survey',
-        items: ['']
-      }, {
         itemType: 'country',
         title: 'Survey Location (country)',
-        placeHolder: ''
+        placeHolder: '',
+        isEditing: true
       }, {
         itemType: 'select',
         title: 'Region',
         placeHolder: '',
         items: ['All', 'North', 'South', 'East', 'West', 'Central'],
-        selectedItems: this.selectedRegion
+        selectedItems: this.selectedRegion,
+        isEditing: true
       }]
     });
     this.steps.push({
@@ -202,7 +209,8 @@ export class SurveyService {
         itemType: 'cbGroup',
         title: '',
         placeHolder: '',
-        items: ['For self distribution', 'Specify target audience']
+        items: ['For self distribution', 'Specify target audience'],
+        isEditing: true
       }]
     });
     this.steps.push({
@@ -212,7 +220,8 @@ export class SurveyService {
         itemType: 'brand',
         title: '',
         placeHolder: '',
-        items: ['']
+        items: [''],
+        isEditing: true
       }]
     });
     this.steps.push({
@@ -222,7 +231,8 @@ export class SurveyService {
         itemType: 'input',
         title: '',
         placeHolder: 'The name of your survey',
-        items: ['']
+        items: [''],
+        isEditing: true
       }]
     });
     this.selectedCategory = this.categories[0];

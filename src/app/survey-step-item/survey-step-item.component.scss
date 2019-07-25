@@ -8,7 +8,16 @@ img {
   display: flex;
   flex-direction: column;
 }
-
+.edit {
+  color: #7698ff !important;
+  font-size: 14px;
+  float: right;
+}
+.summary-txt{
+  color:#000000;
+  font-size:16px;
+  margin-top:0px;
+}
 
 /* Create the checkmark/indicator (hidden when not checked) */
 /* .checkmark:after {
@@ -55,13 +64,13 @@ img {
     border-right: 3px solid transparent !important;
   }
   .multiselect-dropdown .dropdown-btn .dropdown-up {
-    display:none !important;
+    display: none !important;
   }
   .multiselect-item-checkbox input[type="checkbox"] + div:before {
     border-radius: 50% !important;
     border-color: #7698ff !important;
   }
-  .country-select .country-list{
-    font-size:14px !important;
+  .country-select .country-list {
+    font-size: 14px !important;
   }
 }

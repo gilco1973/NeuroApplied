@@ -1,6 +1,6 @@
 <div class="MyBrand">My Brand</div>
 <div class="line"></div>
-<app-upload-section [isCompeting]="false" (setBrandPath)="setBrandPath($event, false)"></app-upload-section>
+<app-upload-section (setBrandColor)="setBrandColor($event)" [isCompeting]="false" (setBrandPath)="setBrandPath($event, false)"></app-upload-section>
 
-<app-upload-section [isCompeting]="true" (setBrandPath)="setBrandPath($event, true)"></app-upload-section>
+<app-upload-section (setBrandColor)="setCompetitionBrandColor($event)" [isCompeting]="true" (setBrandPath)="setBrandPath($event, true)"></app-upload-section>
 

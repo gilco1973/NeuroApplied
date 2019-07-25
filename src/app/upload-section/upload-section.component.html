@@ -15,11 +15,11 @@
   <div class="upload-content">Color will represent your brand’s chart in the<br>survey results</div>
 </div>
 <div class="color-btn-holder">
-  <div class="color-btn color-btn-red"></div>
-  <div class="color-btn color-btn-orange"></div>
-  <div class="color-btn color-btn-yellow"></div>
-  <div class="color-btn color-btn-green"></div>
-  <div class="color-btn color-btn-blue"></div>
-  <div class="color-btn color-btn-purple"></div>
+  <div id="red" class="color-btn color-btn-red" (click)="colorSelected('red')" selected></div>
+  <div id="orange" class="color-btn color-btn-orange" (click)="colorSelected('orange')"></div>
+  <div id="yellow" class="color-btn color-btn-yellow" (click)="colorSelected('yellow')"></div>
+  <div id="green" class="color-btn color-btn-green" (click)="colorSelected('green')"></div>
+  <div id="blue" class="color-btn color-btn-blue" (click)="colorSelected('blue')"></div>
+  <div id="purple" class="color-btn color-btn-purple" (click)="colorSelected('purple')"></div>
 </div>
 <div class="line"></div>

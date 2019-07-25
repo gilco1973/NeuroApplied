@@ -62,6 +62,10 @@ export class TargetAudienceComponent implements OnInit {
       unSelectAllText: 'UnSelect All',
       allowSearchFilter: false
     };
+    this.selectedIncomes = this.incomes;
+    this.selectedEducations = this.educations;
+    this.selectedEthnicities = this.ethnicities;
+    this.selectedReligions = this.religions;
   }
   checkBoxClicked($event, item) {
     console.log(item);

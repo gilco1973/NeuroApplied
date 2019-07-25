@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class BrandComponent implements OnInit {
   brandPath: any;
   competingBrandPath: any;
-
+  selectedColor;
+  selectedCompetitionColor: any;
   constructor() { }
 
   ngOnInit() {
@@ -20,5 +21,13 @@ export class BrandComponent implements OnInit {
     else{
       this.competingBrandPath = $event;
     }
+  }
+  setBrandColor($event){
+    this.selectedColor = $event;
+    console.log('my color:'+this.selectedColor);
+  }
+  setCompetitionBrandColor($event){
+    this.selectedCompetitionColor = $event;
+    console.log('competition color:'+this.selectedCompetitionColor);
   }
 }

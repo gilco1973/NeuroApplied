@@ -33,19 +33,25 @@ export class SubItem {
 })
 export class SurveyService {
   steps: SurveyStep[] = [];
-  businessQuestions: any[] = [{ subs: [{ children: ['Why sales are declining?',
-    'Why custumers churn is high?',
-    'Why employees churn is high?',
-    'Why customers are leaving?',
-    'Why do we get low rating in?',
-    'How effective is my messaging?']}]}];
+  businessQuestions: any[] = [{
+    subs: [{
+      children: ['Why sales are declining?',
+        'Why custumers churn is high?',
+        'Why employees churn is high?',
+        'Why customers are leaving?',
+        'Why do we get low rating in?',
+        'How effective is my messaging?']
+    }]
+  }];
   selectedCategory: any;
   selectedBusinessQuestions: any[];
   selectedResearchSetups: any[];
   selectedResearch: any;
   selectedBusiness: any;
-  researchSteps: any[] = [{ subs: [{ children: ['Finding unknown brand values', 'Compare brand perception to competitors'] }],
-   selectedChild: 'Finding unknown brand values'}];
+  researchSteps: any[] = [{
+    subs: [{ children: ['Finding unknown brand values', 'Compare brand perception to competitors'] }],
+    selectedChild: 'Finding unknown brand values'
+  }];
   attributes: string[] = ['Fun', 'Uplifting', 'Trustworthy', 'For someone...', 'Tasty', 'Goes well with'];
   categories: Category[] = [
     {
@@ -148,7 +154,9 @@ export class SurveyService {
         placeHolder: '',
         items: this.researchSteps,
         selectedItems: this.selectedResearchSetups,
-        isEditing: true
+        isEditing: true,
+        tooltip: `Multiple research setups will effect the results delivery time (an extra 10 days) and also 
+        the final price`
       }, {
         itemType: 'add',
         title: '',
@@ -180,15 +188,19 @@ export class SurveyService {
         isEditing: true
       }, {
         itemType: 'select-multi',
-        title: 'Attributes',
+        title: 'Values',
         placeHolder: '',
         items: this.selectedCategory.attributes,
         isEditing: true
       }, {
         itemType: 'input',
-        title: '*Add attributes (Add values not in list)',
+        title: '*Additional Values (Add values not in list)',
         placeHolder: 'Write here',
-        isEditing: true
+        isEditing: true,
+        tooltip: `Adding values not in value list, should be all be prenounce in adjective and will effect 
+        the final price and result’s delivary time 
+        (10 extra days). You may remove them any 
+        time before checkout `
       }]
     });
     this.steps.push({
@@ -196,7 +208,8 @@ export class SurveyService {
         itemType: 'country',
         title: 'Survey Location (country)',
         placeHolder: '',
-        isEditing: true
+        isEditing: true,
+        tooltip: 'Select a country and a region'
       }, {
         itemType: 'select',
         title: 'Region',

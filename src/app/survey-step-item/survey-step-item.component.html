@@ -6,9 +6,11 @@
       <a class="edit" *ngIf="stepItem.itemType != 'add' && stepItem.isEditing"
         (click)="stepItem.isEditing = !stepItem.isEditing">Done</a>
     </span>
+    
   </div>
   <i *ngIf="stepItem.tooltip" class="info" popoverClass="popover" [openDelay]="300" [closeDelay]="500" 
-      ngbPopover="{{stepItem.tooltip}}"></i>
+    ngbPopover="{{stepItem.tooltip}}" placement="left"></i>
+ 
   <div *ngIf="stepItem.isEditing === true">
     <input *ngIf="stepItem.itemType==='input'" class="input-box txt-small-place-holder" type="text"
       [(ngModel)]="selection" placeholder="{{stepItem.placeHolder}}" />
@@ -42,6 +44,8 @@
     <div *ngIf="stepItem.itemType==='add'" name="add" class="add-sub">
       <img src="../../assets/contact-add.svg" (click)="addSubItem(stepItem.itemTypeToAdd)">
       <span class="txt-font14 txt-font14-black">{{stepItem.addTitle}}</span>
+      <i *ngIf="stepItem.tooltip" class="info" popoverClass="popover" [openDelay]="300" [closeDelay]="500" 
+    ngbPopover="{{stepItem.tooltip}}" placement="left"></i>
     </div>
     <div *ngIf="stepItem.itemType==='cbGroup'" name="targetAudience">
       <div class="checkbox checkbox-container txt-font14-black">

@@ -11,6 +11,7 @@ export class UploadSectionComponent implements OnInit {
   @Output() setBrandColor = new EventEmitter<string>();
   path: string;
   selectedColor;
+  colors: string[] = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
   constructor() { }
 
   ngOnInit() {
@@ -30,14 +31,15 @@ export class UploadSectionComponent implements OnInit {
   upload() {
     this.setBrandPath.emit(this.path);
   }
-  colorSelected(color) {
+  colorSelected(index, color) {
     this.setBrandColor.emit(color);
-    $('#red').removeClass('active');
-    $('#green').removeClass('active');
-    $('#blue').removeClass('active');
-    $('#yellow').removeClass('active');
-    $('#orange').removeClass('active');
-    $('#purple').removeClass('active');
-    $('#' + color).addClass('active');
+    console.log(index);
+    $('#red').removeClass('selected-color');
+    $('#green').removeClass('selected-color');
+    $('#blue').removeClass('selected-color');
+    $('#yellow').removeClass('selected-color');
+    $('#orange').removeClass('selected-color');
+    $('#purple').removeClass('selected-color');
+    $('#' + color).addClass('selected-color');
   }
 }

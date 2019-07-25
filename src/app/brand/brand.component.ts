@@ -14,20 +14,20 @@ export class BrandComponent implements OnInit {
 
   ngOnInit() {
   }
-  setBrandPath($event, isCompetitionBrand){
-    if(isCompetitionBrand){
+  setBrandPath($event, isCompetitionBrand) {
+    if (isCompetitionBrand) {
       this.brandPath = $event;
     }
-    else{
+    else {
       this.competingBrandPath = $event;
     }
   }
-  setBrandColor($event){
+  setBrandColor($event) {
     this.selectedColor = $event;
-    console.log('my color:'+this.selectedColor);
+    console.log('my color:' + this.selectedColor);
   }
-  setCompetitionBrandColor($event){
+  setCompetitionBrandColor($event) {
     this.selectedCompetitionColor = $event;
-    console.log('competition color:'+this.selectedCompetitionColor);
+    console.log('competition color:' + this.selectedCompetitionColor);
   }
 }

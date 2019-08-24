@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SurveyService, SurveyStep } from '../survey.service';
+import { Router } from '@angular/router';
 
 
 
@@ -12,11 +13,11 @@ export class StartNewSurveyComponent implements OnInit {
   selectedRegion: any[];
 
 
-  constructor(public svcSurvey: SurveyService) { }
+  constructor(private svcSurvey: SurveyService, private router: Router) { }
 
   ngOnInit() {
   }
   createSurvey() {
-
+    this.router.navigateByUrl('/summary');
   }
 }

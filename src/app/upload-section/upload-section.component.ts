@@ -31,7 +31,7 @@ export class UploadSectionComponent implements OnInit {
   upload() {
     this.setBrandPath.emit(this.path);
   }
-  colorSelected(index, color) {
+  colorSelected(color) {
     this.setBrandColor.emit(color);
   }
 }

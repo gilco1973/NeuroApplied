@@ -8,7 +8,7 @@
     </span>
     
   </div>
-  <i *ngIf="stepItem.tooltip" class="info" popoverClass="popover" [openDelay]="300" [closeDelay]="500" 
+  <i *ngIf="stepItem.tooltip && stepItem.isEditing === true" class="info" popoverClass="popover" [openDelay]="300" [closeDelay]="500" 
     ngbPopover="{{stepItem.tooltip}}" placement="left"></i>
  
   <div *ngIf="stepItem.isEditing === true">
@@ -72,13 +72,13 @@
       </div>
     </div>
     <div *ngSwitchCase="'select-business'">
-      <div *ngFor="let sub of svcSurvey.selectedBusiness.subs;let i = index;">
-        {{sub.selectedChild}}
+      <div *ngIf="selection && selection.length">
+        {{selection[0].selectedChild}}
       </div>
     </div>
     <div *ngSwitchCase="'select-research'">
-      <div *ngFor="let sub of svcSurvey.selectedResearch.subs;let i = index;">
-        {{sub.selectedChild}}
+      <div *ngIf="selection && selection.length">
+        {{selection[0].selectedChild}}
       </div>
     </div> 
     <div *ngSwitchDefault></div>

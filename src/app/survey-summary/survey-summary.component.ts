@@ -9,7 +9,7 @@ import { SurveyService, SurveyStep } from '../survey.service';
 export class SurveySummaryComponent implements OnInit {
   steps: SurveyStep[];
 
-  constructor(public svcSurvey: SurveyService) { }
+  constructor(private svcSurvey: SurveyService) { }
 
   ngOnInit() {
     this.steps = this.svcSurvey.steps;

@@ -15,9 +15,9 @@
   <div class="upload-content">Color will represent your brand’s chart in the<br>survey results</div>
 </div>
 <div class="color-btn-holder">
-  <div *ngFor="let color of colors;let i = index">
+  <div *ngFor="let color of colors">
     <label class="pure-material-radio">
-      <input type="radio" name="group" (click)="colorSelected(i, color)">
+      <input type="radio" name="group" (click)="colorSelected(color)">
       <span [ngClass]="color == 'red' ? 'color-btn-red' : 'color-btn-'+color"></span>
     </label>
   </div>

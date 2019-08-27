@@ -14,6 +14,8 @@
   <div *ngIf="stepItem.isEditing === true">
     <input *ngIf="stepItem.itemType==='input'" class="input-box txt-small-place-holder" type="text"
       [(ngModel)]="selection" placeholder="{{stepItem.placeHolder}}" />
+      <input *ngIf="stepItem.itemType==='name'" class="input-box txt-small-place-holder" type="text"
+      [(ngModel)]="svcSurvey.selectedName" placeholder="{{stepItem.placeHolder}}" />
     <select *ngIf="stepItem.itemType==='select'" class="txt-small-place-holder" [(ngModel)]="selection">
       <option *ngFor="let item of stepItem.items">{{item}}</option>
     </select>
@@ -62,7 +64,7 @@
   </div>
 
   <div *ngIf="stepItem.isEditing === false" [ngSwitch]="stepItem.itemType" class="txt-small summary-txt">
-    <div *ngSwitchCase="'input'">{{selection}}</div>
+    <div *ngSwitchCase="'name'">{{svcSurvey.selectedName}}</div>
     <div *ngSwitchCase="'select'">{{selection}}</div>
     <div *ngSwitchCase="'country'">{{selection}}</div>
     <div *ngSwitchCase="'select-parents'">{{selectedCategoryHeader}}</div>

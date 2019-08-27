@@ -118,6 +118,7 @@ export class SurveyService {
       attributes: this.attributes
     }];
   selectedRegion: any[];
+  selectedName: any[];
 
 
   updateCategoryObject(selectedCategoryHeader) {
@@ -245,7 +246,7 @@ export class SurveyService {
       stepNumber: 6,
       header: 'Survey name',
       surveyStepsItems: [{
-        itemType: 'input',
+        itemType: 'name',
         title: '',
         placeHolder: 'The name of your survey',
         items: [''],

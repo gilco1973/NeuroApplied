@@ -70,7 +70,7 @@
     "ngx-bootstrap": "^4.2.0",
     "ngx-country-select": "^2.0.6",
     "ngx-spinner": "^7.1.4",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "node-schedule": "^1.2.5",
     "node-schedule-tz": "^1.2.1-4",
     "node-uuid": "^1.4.7",
